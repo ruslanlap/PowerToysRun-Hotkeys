@@ -77,6 +77,40 @@ jobs:
           New-Item -ItemType Directory -Force -Path "$artifactDir/Hotkeys/Images"
           New-Item -ItemType Directory -Force -Path "$artifactDir/Hotkeys/Shortcuts"
           
+          # Copy shortcut files from the project to the build output
+          $shortcutsSourceDir = "Hotkeys/Shortcuts"
+          if (Test-Path $shortcutsSourceDir) {
+            Write-Host "Copying shortcut files from $shortcutsSourceDir"
+            
+            # Create necessary subdirectories in the Shortcuts folder
+            $shortcutSubDirs = @("Adobe", "Browsers", "Code", "Office", "PowerToys")
+            foreach ($subDir in $shortcutSubDirs) {
+              New-Item -ItemType Directory -Force -Path "$artifactDir/Hotkeys/Shortcuts/$subDir"
+            }
+            
+            # Copy Adobe shortcuts
+            Copy-Item -Path "$shortcutsSourceDir/Adobe/*.json" -Destination "$artifactDir/Hotkeys/Shortcuts/Adobe/" -Force
+            
+            # Copy Browsers shortcuts
+            Copy-Item -Path "$shortcutsSourceDir/Browsers/*.json" -Destination "$artifactDir/Hotkeys/Shortcuts/Browsers/" -Force
+            
+            # Copy Code shortcuts
+            Copy-Item -Path "$shortcutsSourceDir/Code/*.json" -Destination "$artifactDir/Hotkeys/Shortcuts/Code/" -Force
+            
+            # Copy Office shortcuts
+            Copy-Item -Path "$shortcutsSourceDir/Office/*.json" -Destination "$artifactDir/Hotkeys/Shortcuts/Office/" -Force
+            
+            # Copy PowerToys shortcuts
+            Copy-Item -Path "$shortcutsSourceDir/PowerToys/*.json" -Destination "$artifactDir/Hotkeys/Shortcuts/PowerToys/" -Force
+            
+            # Copy root shortcuts
+            Copy-Item -Path "$shortcutsSourceDir/*.json" -Destination "$artifactDir/Hotkeys/Shortcuts/" -Force
+            
+            Write-Host "Shortcut files copied successfully"
+          } else {
+            Write-Warning "Shortcuts source directory not found at $shortcutsSourceDir"
+          }
+          
           # Define the direct path to the build output
           $buildOutput = "Hotkeys/Community.PowerToys.Run.Plugin.Hotkeys/bin/${{ matrix.platform }}/Release"
           
