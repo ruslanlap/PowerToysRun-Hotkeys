@@ -41,7 +41,7 @@ jobs:
           dotnet-version: '9.0.x'
       
       - name: Build
-        run: dotnet build Hotkeys/Community.PowerToys.Run.Plugin.Hotkeys/Community.PowerToys.Run.Plugin.Hotkeys.csproj -c Release -p:Platform="${{ matrix.platform }}"
+        run: dotnet build Hotkeys/Community.PowerToys.Run.Plugin.Hotkeys/Community.PowerToys.Run.Plugin.Hotkeys.csproj -c Release -p:Platform="${{ matrix.platform }}" --self-contained true
       
       - name: Get version
         id: get_version
@@ -72,6 +72,10 @@ jobs:
           
           # Create Hotkeys subfolder
           New-Item -ItemType Directory -Force -Path "$artifactDir/Hotkeys"
+          
+          # Create Images and Shortcuts folders
+          New-Item -ItemType Directory -Force -Path "$artifactDir/Hotkeys/Images"
+          New-Item -ItemType Directory -Force -Path "$artifactDir/Hotkeys/Shortcuts"
           
           # Define the direct path to the build output
           $buildOutput = "Hotkeys/Community.PowerToys.Run.Plugin.Hotkeys/bin/${{ matrix.platform }}/Release"
@@ -107,13 +111,34 @@ jobs:
             Write-Host "Files copied successfully"
           } else {
             # Look for a .NET runtime folder
-            $runtimeFolder = Get-ChildItem -Path $buildOutput -Directory | 
-                             Where-Object { $_.Name -like "net*-windows*" } | 
-                             Select-Object -First 1 -ExpandProperty FullName
+            $runtimeFolder = Get-ChildItem -Path $buildOutput -Directory | Where-Object { $_.Name -like "net*" } | Select-Object -First 1 -ExpandProperty FullName
             
             if ($runtimeFolder) {
               Write-Host "Found runtime folder: $runtimeFolder"
+              
+              # Copy all files from the runtime folder
               Copy-Item -Path "$runtimeFolder/*" -Destination "$artifactDir/Hotkeys" -Recurse -Force
+              
+              # Make sure we have all required DLLs
+              $requiredDlls = @(
+                "System.Reactive.dll",
+                "WinRT.Runtime.dll",
+                "Microsoft.Windows.SDK.NET.dll"
+              )
+              
+              foreach ($dll in $requiredDlls) {
+                if (-not (Test-Path "$artifactDir/Hotkeys/$dll")) {
+                  # Try to find the DLL in the build output
+                  $dllPath = Get-ChildItem -Path $buildOutput -Recurse -Filter $dll | Select-Object -First 1 -ExpandProperty FullName
+                  if ($dllPath) {
+                    Copy-Item -Path $dllPath -Destination "$artifactDir/Hotkeys/" -Force
+                    Write-Host "Copied required DLL: $dll"
+                  } else {
+                    Write-Warning "Could not find required DLL: $dll"
+                  }
+                }
+              }
+              
               Write-Host "Files copied successfully from runtime folder"
             } else {
               # If no runtime folder, check for any subdirectories
@@ -298,7 +323,7 @@ jobs:
           dotnet-version: '9.0.x'
       
       - name: Build for analysis
-        run: dotnet build Definition/Community.PowerToys.Run.Plugin.Definition/Community.PowerToys.Run.Plugin.Definition.csproj -c Release
+        run: dotnet build Hotkeys/Community.PowerToys.Run.Plugin.Hotkeys/Community.PowerToys.Run.Plugin.Hotkeys.csproj -c Release
       
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@4f3212b61783c3c68e8309a0f18a699764811cda # v3.27.1
