@@ -52,6 +52,16 @@
   </a>
 </div>
 
+
+## 📋 Overview
+
+Hotkeys is a powerful plugin for [Microsoft PowerToys Run](https://github.com/microsoft/PowerToys) that lets you instantly find keyboard shortcuts for any application without leaving your keyboard. Simply type `hk <search>` to discover shortcuts from Visual Studio Code, Photoshop, Windows, and hundreds of other applications.
+
+<div align="center">
+  <img src="assets/demo-hotkeys2.gif" alt="Search across applications" width="650">
+</div>
+
+
 ## 📋 Table of Contents
 
 - [📋 Overview](#-overview)
@@ -72,14 +82,6 @@
 - [🙏 Acknowledgements](#-acknowledgements)
 - [☕ Support](#-support)
 - [🆕 What's New (v1.2.0)](#-whats-new-v120)
-
-## 📋 Overview
-
-Hotkeys is a powerful plugin for [Microsoft PowerToys Run](https://github.com/microsoft/PowerToys) that lets you instantly find keyboard shortcuts for any application without leaving your keyboard. Simply type `hk <search>` to discover shortcuts from Visual Studio Code, Photoshop, Windows, and hundreds of other applications.
-
-<div align="center">
-  <img src="assets/demo-hotkeys2.gif" alt="Search across applications" width="650">
-</div>
 
 ## ✨ Features
 
