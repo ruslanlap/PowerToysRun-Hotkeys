@@ -82,26 +82,19 @@ jobs:
           if (Test-Path $shortcutsSourceDir) {
             Write-Host "Copying shortcut files from $shortcutsSourceDir"
             
-            # Create necessary subdirectories in the Shortcuts folder
-            $shortcutSubDirs = @("Adobe", "Browsers", "Code", "Office", "PowerToys")
-            foreach ($subDir in $shortcutSubDirs) {
-              New-Item -ItemType Directory -Force -Path "$artifactDir/Hotkeys/Shortcuts/$subDir"
+            # Automatically detect and create all subdirectories in the Shortcuts folder
+            $subDirs = Get-ChildItem -Path $shortcutsSourceDir -Directory
+            Write-Host "Found subdirectories: $($subDirs.Name -join ', ')"
+            
+            foreach ($subDir in $subDirs) {
+              $subDirName = $subDir.Name
+              Write-Host "Creating directory: $artifactDir/Hotkeys/Shortcuts/$subDirName"
+              New-Item -ItemType Directory -Force -Path "$artifactDir/Hotkeys/Shortcuts/$subDirName"
+              
+              # Copy all JSON files from this subdirectory
+              Write-Host "Copying files from $shortcutsSourceDir/$subDirName to $artifactDir/Hotkeys/Shortcuts/$subDirName"
+              Copy-Item -Path "$shortcutsSourceDir/$subDirName/*.json" -Destination "$artifactDir/Hotkeys/Shortcuts/$subDirName/" -Force
             }
-            
-            # Copy Adobe shortcuts
-            Copy-Item -Path "$shortcutsSourceDir/Adobe/*.json" -Destination "$artifactDir/Hotkeys/Shortcuts/Adobe/" -Force
-            
-            # Copy Browsers shortcuts
-            Copy-Item -Path "$shortcutsSourceDir/Browsers/*.json" -Destination "$artifactDir/Hotkeys/Shortcuts/Browsers/" -Force
-            
-            # Copy Code shortcuts
-            Copy-Item -Path "$shortcutsSourceDir/Code/*.json" -Destination "$artifactDir/Hotkeys/Shortcuts/Code/" -Force
-            
-            # Copy Office shortcuts
-            Copy-Item -Path "$shortcutsSourceDir/Office/*.json" -Destination "$artifactDir/Hotkeys/Shortcuts/Office/" -Force
-            
-            # Copy PowerToys shortcuts
-            Copy-Item -Path "$shortcutsSourceDir/PowerToys/*.json" -Destination "$artifactDir/Hotkeys/Shortcuts/PowerToys/" -Force
             
             # Copy root shortcuts
             Copy-Item -Path "$shortcutsSourceDir/*.json" -Destination "$artifactDir/Hotkeys/Shortcuts/" -Force
