@@ -1,0 +1,276 @@
+[
+  {
+    "shortcut": "Ctrl+Shift+P / F1",
+    "description": "Show Command Palette",
+    "keywords": ["command", "palette", "actions"],
+    "category": "General"
+  },
+  {
+    "shortcut": "Ctrl+P",
+    "description": "Quick open file",
+    "keywords": ["quick", "open", "file"],
+    "category": "General"
+  },
+  {
+    "shortcut": "Ctrl+Shift+N",
+    "description": "New window",
+    "keywords": ["new", "window"],
+    "category": "Window Management"
+  },
+  {
+    "shortcut": "Ctrl+Shift+W",
+    "description": "Close window",
+    "keywords": ["close", "window"],
+    "category": "Window Management"
+  },
+  {
+    "shortcut": "Ctrl+N",
+    "description": "New file",
+    "keywords": ["new", "file"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+O",
+    "description": "Open file…",
+    "keywords": ["open", "file"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+S",
+    "description": "Save file",
+    "keywords": ["save", "file"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+Shift+S",
+    "description": "Save As…",
+    "keywords": ["save as", "file"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+K S",
+    "description": "Save All",
+    "keywords": ["save", "all", "files"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+K Ctrl+S",
+    "description": "Show Keyboard Shortcuts",
+    "keywords": ["keyboard", "shortcuts"],
+    "category": "General"
+  },
+  {
+    "shortcut": "Ctrl+W",
+    "description": "Close editor",
+    "keywords": ["close", "tab", "editor"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+K Ctrl+W",
+    "description": "Close all editors",
+    "keywords": ["close", "all", "editors"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+Shift+T",
+    "description": "Reopen closed editor",
+    "keywords": ["reopen", "closed", "editor"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+Tab",
+    "description": "Switch editor",
+    "keywords": ["switch", "editor", "tabs"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+`",
+    "description": "Toggle integrated terminal",
+    "keywords": ["terminal", "toggle"],
+    "category": "Terminal"
+  },
+  {
+    "shortcut": "Ctrl+B",
+    "description": "Toggle sidebar visibility",
+    "keywords": ["sidebar", "toggle"],
+    "category": "View"
+  },
+  {
+    "shortcut": "Ctrl+Shift+E",
+    "description": "Show Explorer",
+    "keywords": ["explorer", "view"],
+    "category": "View"
+  },
+  {
+    "shortcut": "Ctrl+Shift+F",
+    "description": "Show Search",
+    "keywords": ["search", "view"],
+    "category": "View"
+  },
+  {
+    "shortcut": "Ctrl+Shift+G",
+    "description": "Show Source Control",
+    "keywords": ["git", "source", "control"],
+    "category": "View"
+  },
+  {
+    "shortcut": "Ctrl+Shift+D",
+    "description": "Show Run and Debug",
+    "keywords": ["run", "debug"],
+    "category": "View"
+  },
+  {
+    "shortcut": "Ctrl+Shift+X",
+    "description": "Show Extensions",
+    "keywords": ["extensions", "view"],
+    "category": "View"
+  },
+  {
+    "shortcut": "Ctrl+Shift+M",
+    "description": "Show Problems panel",
+    "keywords": ["problems", "errors"],
+    "category": "View"
+  },
+  {
+    "shortcut": "Ctrl+,",
+    "description": "Open Settings",
+    "keywords": ["settings", "preferences"],
+    "category": "General"
+  },
+  {
+    "shortcut": "Ctrl+Space",
+    "description": "Trigger suggestion",
+    "keywords": ["suggest", "intellisense"],
+    "category": "Editor"
+  },
+  {
+    "shortcut": "Ctrl+Shift+Space",
+    "description": "Trigger parameter hints",
+    "keywords": ["parameter", "hints"],
+    "category": "Editor"
+  },
+  {
+    "shortcut": "Tab / Shift+Tab",
+    "description": "Indent / outdent line",
+    "keywords": ["indent", "outdent"],
+    "category": "Editor"
+  },
+  {
+    "shortcut": "Ctrl+/",
+    "description": "Toggle line comment",
+    "keywords": ["comment", "toggle"],
+    "category": "Editor"
+  },
+  {
+    "shortcut": "Ctrl+Shift+A",
+    "description": "Toggle block comment",
+    "keywords": ["comment", "block"],
+    "category": "Editor"
+  },
+  {
+    "shortcut": "Alt+Up / Alt+Down",
+    "description": "Move line up / down",
+    "keywords": ["move", "line"],
+    "category": "Editor"
+  },
+  {
+    "shortcut": "Alt+Shift+Up / Alt+Shift+Down",
+    "description": "Copy line up / down",
+    "keywords": ["copy", "line"],
+    "category": "Editor"
+  },
+  {
+    "shortcut": "Ctrl+Enter / Ctrl+Shift+Enter",
+    "description": "Insert line below / above",
+    "keywords": ["insert", "line"],
+    "category": "Editor"
+  },
+  {
+    "shortcut": "Ctrl+Shift+\\",
+    "description": "Jump to matching bracket",
+    "keywords": ["bracket", "jump"],
+    "category": "Editor"
+  },
+  {
+    "shortcut": "Ctrl+]/[",
+    "description": "Indent / outdent active line",
+    "keywords": ["indent", "outdent"],
+    "category": "Editor"
+  },
+  {
+    "shortcut": "Home / End",
+    "description": "Go to beginning / end of line",
+    "keywords": ["navigate", "line"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+Home / Ctrl+End",
+    "description": "Go to top / bottom of file",
+    "keywords": ["navigate", "file"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+G",
+    "description": "Go to line…",
+    "keywords": ["go", "line"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+T",
+    "description": "Go to symbol in workspace…",
+    "keywords": ["go", "symbol", "workspace"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+Shift+O",
+    "description": "Go to symbol in file…",
+    "keywords": ["go", "symbol", "file"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+F",
+    "description": "Find",
+    "keywords": ["find", "search"],
+    "category": "Search"
+  },
+  {
+    "shortcut": "Ctrl+H",
+    "description": "Replace",
+    "keywords": ["replace", "search"],
+    "category": "Search"
+  },
+  {
+    "shortcut": "F3 / Shift+F3",
+    "description": "Find next / previous",
+    "keywords": ["find", "next", "previous"],
+    "category": "Search"
+  },
+  {
+    "shortcut": "Alt+Enter",
+    "description": "Select all occurrences of find match",
+    "keywords": ["select", "occurrences"],
+    "category": "Multi-cursor"
+  },
+  {
+    "shortcut": "Ctrl+D",
+    "description": "Add selection to next find match",
+    "keywords": ["select", "next", "match"],
+    "category": "Multi-cursor"
+  },
+  {
+    "shortcut": "Ctrl+F2",
+    "description": "Select all occurrences of current word",
+    "keywords": ["select", "word"],
+    "category": "Multi-cursor"
+  },
+  {
+    "shortcut": "Alt+Click",
+    "description": "Insert cursor",
+    "keywords": ["cursor", "multi"],
+    "category": "Multi-cursor"
+  },
+  {
+    "shortcut": "Ctrl+Alt+Down / Ctrl+Alt+Up",
+    "description": "Insert cursor below / above",
+    "keywords": ["cursor", "multi"],
+    "category": "Multi-cursor"

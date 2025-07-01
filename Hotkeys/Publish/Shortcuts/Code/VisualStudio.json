@@ -1,0 +1,362 @@
+[
+  {
+    "shortcut": "Ctrl+Shift+N",
+    "description": "New project",
+    "keywords": ["new", "project", "create"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+O",
+    "description": "Open file",
+    "keywords": ["open", "file"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+Shift+O",
+    "description": "Open project/solution",
+    "keywords": ["open", "project", "solution"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+S",
+    "description": "Save file",
+    "keywords": ["save", "file"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+Shift+S",
+    "description": "Save all",
+    "keywords": ["save", "all"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+P",
+    "description": "Print",
+    "keywords": ["print", "file"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+F4",
+    "description": "Close document",
+    "keywords": ["close", "document"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+Shift+F4",
+    "description": "Close all documents",
+    "keywords": ["close", "all", "documents"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+Tab",
+    "description": "Switch open tabs and tool windows",
+    "keywords": ["switch", "navigate"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+-",
+    "description": "Navigate backward",
+    "keywords": ["navigate", "backward"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+Shift+-",
+    "description": "Navigate forward",
+    "keywords": ["navigate", "forward"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+M Ctrl+M",
+    "description": "Toggle all outlining",
+    "keywords": ["toggle", "outlining"],
+    "category": "Code Folding"
+  },
+  {
+    "shortcut": "Ctrl+M Ctrl+O",
+    "description": "Collapse to definitions",
+    "keywords": ["collapse", "definitions"],
+    "category": "Code Folding"
+  },
+  {
+    "shortcut": "Ctrl+M Ctrl+L",
+    "description": "Expand all outlining",
+    "keywords": ["expand", "all"],
+    "category": "Code Folding"
+  },
+  {
+    "shortcut": "Ctrl+M Ctrl+P",
+    "description": "Stop outlining",
+    "keywords": ["stop", "outlining"],
+    "category": "Code Folding"
+  },
+  {
+    "shortcut": "Ctrl+K Ctrl+C",
+    "description": "Comment selection",
+    "keywords": ["comment", "selection"],
+    "category": "Editing"
+  },
+  {
+    "shortcut": "Ctrl+K Ctrl+U",
+    "description": "Uncomment selection",
+    "keywords": ["uncomment", "selection"],
+    "category": "Editing"
+  },
+  {
+    "shortcut": "Ctrl+K Ctrl+D",
+    "description": "Format document",
+    "keywords": ["format", "document"],
+    "category": "Editing"
+  },
+  {
+    "shortcut": "Ctrl+Space",
+    "description": "IntelliSense complete",
+    "keywords": ["intellisense", "complete"],
+    "category": "Editor"
+  },
+  {
+    "shortcut": "Ctrl+J",
+    "description": "List members",
+    "keywords": ["list", "members"],
+    "category": "Editor"
+  },
+  {
+    "shortcut": "Ctrl+Shift+Space",
+    "description": "Parameter info",
+    "keywords": ["parameter", "hints"],
+    "category": "Editor"
+  },
+  {
+    "shortcut": "Tab / Shift+Tab",
+    "description": "Insert snippet / outdent",
+    "keywords": ["snippet", "indent", "outdent"],
+    "category": "Editor"
+  },
+  {
+    "shortcut": "Ctrl+L",
+    "description": "Delete line",
+    "keywords": ["delete", "line"],
+    "category": "Editing"
+  },
+  {
+    "shortcut": "Ctrl+C",
+    "description": "Copy",
+    "keywords": ["copy", "clipboard"],
+    "category": "Clipboard"
+  },
+  {
+    "shortcut": "Ctrl+V",
+    "description": "Paste",
+    "keywords": ["paste", "clipboard"],
+    "category": "Clipboard"
+  },
+  {
+    "shortcut": "Ctrl+X",
+    "description": "Cut",
+    "keywords": ["cut", "clipboard"],
+    "category": "Clipboard"
+  },
+  {
+    "shortcut": "Ctrl+Z",
+    "description": "Undo",
+    "keywords": ["undo"],
+    "category": "Editing"
+  },
+  {
+    "shortcut": "Ctrl+Y",
+    "description": "Redo",
+    "keywords": ["redo"],
+    "category": "Editing"
+  },
+  {
+    "shortcut": "F12",
+    "description": "Go To Definition",
+    "keywords": ["go", "definition"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+F12",
+    "description": "Go To Declaration",
+    "keywords": ["go", "declaration"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Alt+F12",
+    "description": "Peek Definition",
+    "keywords": ["peek", "definition"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+Shift+F12",
+    "description": "Go To Next Error",
+    "keywords": ["next", "error"],
+    "category": "Debugging"
+  },
+  {
+    "shortcut": "F8",
+    "description": "Next error or warning",
+    "keywords": ["next", "error", "warning"],
+    "category": "Debugging"
+  },
+  {
+    "shortcut": "Shift+F8",
+    "description": "Previous error or warning",
+    "keywords": ["previous", "error", "warning"],
+    "category": "Debugging"
+  },
+  {
+    "shortcut": "Ctrl+G",
+    "description": "Go To Line…",
+    "keywords": ["go", "line"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+F",
+    "description": "Find",
+    "keywords": ["find"],
+    "category": "Search"
+  },
+  {
+    "shortcut": "Ctrl+H",
+    "description": "Replace",
+    "keywords": ["replace"],
+    "category": "Search"
+  },
+  {
+    "shortcut": "Ctrl+Shift+F",
+    "description": "Find in files",
+    "keywords": ["find", "files"],
+    "category": "Search"
+  },
+  {
+    "shortcut": "Ctrl+Shift+H",
+    "description": "Replace in files",
+    "keywords": ["replace", "files"],
+    "category": "Search"
+  },
+  {
+    "shortcut": "Ctrl+Shift+B",
+    "description": "Build solution",
+    "keywords": ["build", "solution"],
+    "category": "Build"
+  },
+  {
+    "shortcut": "F6",
+    "description": "Build solution",
+    "keywords": ["build", "solution"],
+    "category": "Build"
+  },
+  {
+    "shortcut": "Ctrl+F5",
+    "description": "Run without debugging",
+    "keywords": ["run", "no debug"],
+    "category": "Debugging"
+  },
+  {
+    "shortcut": "F5",
+    "description": "Start debugging",
+    "keywords": ["start", "debug"],
+    "category": "Debugging"
+  },
+  {
+    "shortcut": "Shift+F5",
+    "description": "Stop debugging",
+    "keywords": ["stop", "debug"],
+    "category": "Debugging"
+  },
+  {
+    "shortcut": "F9",
+    "description": "Toggle breakpoint",
+    "keywords": ["breakpoint", "toggle"],
+    "category": "Debugging"
+  },
+  {
+    "shortcut": "F10",
+    "description": "Step over",
+    "keywords": ["step", "over"],
+    "category": "Debugging"
+  },
+  {
+    "shortcut": "F11",
+    "description": "Step into",
+    "keywords": ["step", "into"],
+    "category": "Debugging"
+  },
+  {
+    "shortcut": "Shift+F11",
+    "description": "Step out",
+    "keywords": ["step", "out"],
+    "category": "Debugging"
+  },
+  {
+    "shortcut": "Shift+Alt+Enter",
+    "description": "Toggle full screen",
+    "keywords": ["full screen", "toggle"],
+    "category": "View"
+  },
+  {
+    "shortcut": "Ctrl+Alt+L",
+    "description": "Show Solution Explorer",
+    "keywords": ["solution explorer"],
+    "category": "View"
+  },
+  {
+    "shortcut": "Ctrl+Alt+X",
+    "description": "Show Toolbox",
+    "keywords": ["toolbox"],
+    "category": "View"
+  },
+  {
+    "shortcut": "Ctrl+Alt+O",
+    "description": "Show Output window",
+    "keywords": ["output", "window"],
+    "category": "View"
+  },
+  {
+    "shortcut": "F4",
+    "description": "Show Properties window",
+    "keywords": ["properties", "window"],
+    "category": "View"
+  },
+  {
+    "shortcut": "Ctrl+Shift+A",
+    "description": "Add new item",
+    "keywords": ["add", "new", "item"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+Shift+C",
+    "description": "Edit project file",
+    "keywords": ["edit", "project", "file"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+R Ctrl+R",
+    "description": "Rename symbol",
+    "keywords": ["rename", "symbol"],
+    "category": "Refactoring"
+  },
+  {
+    "shortcut": "Ctrl+R Ctrl+M",
+    "description": "Extract method",
+    "keywords": ["extract", "method"],
+    "category": "Refactoring"
+  },
+  {
+    "shortcut": "Alt+Enter",
+    "description": "Quick Actions and Refactorings",
+    "keywords": ["quick actions", "refactor"],
+    "category": "Refactoring"
+  },
+  {
+    "shortcut": "Ctrl+Shift+V",
+    "description": "Cycle clipboard ring",
+    "keywords": ["clipboard", "ring"],
+    "category": "Clipboard"
+  },
+  {
+    "shortcut": "Ctrl+K Ctrl+X",
+    "description": "Surround With…",
+    "keywords": ["surround", "template"],
+    "category": "Refactoring"
+  }
+]

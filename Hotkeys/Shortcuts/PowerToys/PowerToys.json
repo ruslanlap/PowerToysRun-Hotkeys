@@ -1,0 +1,92 @@
+[
+  {
+    "shortcut": "Alt+Space",
+    "description": "Open PowerToys Run search window",
+    "keywords": ["run", "search", "launcher"],
+    "category": "PowerToys Run"
+  },
+  {
+    "shortcut": "Win+Shift+`",
+    "description": "Toggle Always On Top for the active window",
+    "keywords": ["always on top", "pin", "window"],
+    "category": "Always On Top"
+  },
+  {
+    "shortcut": "Win+Ctrl+Shift+F",
+    "description": "Open the File Locksmith context menu",
+    "keywords": ["file", "locksmith", "processes"],
+    "category": "File Locksmith"
+  },
+  {
+    "shortcut": "Win+Ctrl+D",
+    "description": "Open FancyZones editor",
+    "keywords": ["fancyzones", "layout", "editor"],
+    "category": "FancyZones"
+  },
+  {
+    "shortcut": "Win+Shift+Arrow Keys",
+    "description": "Move window to the next or previous FancyZones layout zone",
+    "keywords": ["fancyzones", "window", "move", "zone"],
+    "category": "FancyZones"
+  },
+  {
+    "shortcut": "Win+Ctrl+Alt+Shift",
+    "description": "Open the PowerToys settings window",
+    "keywords": ["settings", "configuration", "powertoys"],
+    "category": "General"
+  },
+  {
+    "shortcut": "Ctrl+Shift+C",
+    "description": "Copy color code from Color Picker",
+    "keywords": ["color", "picker", "hex", "copy"],
+    "category": "Color Picker"
+  },
+  {
+    "shortcut": "Win+Shift+S",
+    "description": "Open Screen Ruler for measuring pixels",
+    "keywords": ["screen ruler", "measure", "pixels"],
+    "category": "Screen Ruler"
+  },
+  {
+    "shortcut": "Win+Shift+T",
+    "description": "Activate Text Extractor to copy text from images",
+    "keywords": ["text", "extractor", "ocr", "copy"],
+    "category": "Text Extractor"
+  },
+  {
+    "shortcut": "Win+Ctrl+Shift+M",
+    "description": "Open Mouse Without Borders settings",
+    "keywords": ["mouse", "borders", "multi-device"],
+    "category": "Mouse Without Borders"
+  },
+  {
+    "shortcut": "Win+Shift+H",
+    "description": "Highlight the mouse pointer",
+    "keywords": ["mouse", "highlight", "pointer"],
+    "category": "Mouse Utilities"
+  },
+  {
+    "shortcut": "Win+Shift+D",
+    "description": "Toggle Find My Mouse spotlight",
+    "keywords": ["mouse", "find", "spotlight"],
+    "category": "Mouse Utilities"
+  },
+  {
+    "shortcut": "Win+Ctrl+Shift+V",
+    "description": "Paste plain text using Paste As Plain Text",
+    "keywords": ["paste", "plain text", "clipboard"],
+    "category": "Clipboard"
+  },
+  {
+    "shortcut": "Win+Ctrl+T",
+    "description": "Open the Quick Accent picker",
+    "keywords": ["accent", "character", "typing"],
+    "category": "Quick Accent"
+  },
+  {
+    "shortcut": "Win+Ctrl+Shift+R",
+    "description": "Start or stop Video Conference Mute",
+    "keywords": ["mute", "video", "conference"],
+    "category": "Video Conference Mute"
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "shortcut": "Ctrl+T",
+    "description": "Open a new tab",
+    "keywords": ["tab", "new", "open"],
+    "category": "Tabs"
+  },
+  {
+    "shortcut": "Ctrl+Shift+T",
+    "description": "Reopen the last closed tab",
+    "keywords": ["tab", "reopen", "closed"],
+    "category": "Tabs"
+  },
+  {
+    "shortcut": "Ctrl+W",
+    "description": "Close the current tab",
+    "keywords": ["tab", "close"],
+    "category": "Tabs"
+  },
+  {
+    "shortcut": "Ctrl+Tab",
+    "description": "Switch to the next tab",
+    "keywords": ["tab", "next", "switch"],
+    "category": "Tabs"
+  },
+  {
+    "shortcut": "Ctrl+Shift+Tab",
+    "description": "Switch to the previous tab",
+    "keywords": ["tab", "previous", "switch"],
+    "category": "Tabs"
+  },
+  {
+    "shortcut": "Ctrl+1 to Ctrl+8",
+    "description": "Switch to the tab with the specified number (1-8)",
+    "keywords": ["tab", "number", "switch"],
+    "category": "Tabs"
+  },
+  {
+    "shortcut": "Ctrl+9",
+    "description": "Switch to the last tab",
+    "keywords": ["tab", "last", "switch"],
+    "category": "Tabs"
+  },
+  {
+    "shortcut": "Ctrl+N",
+    "description": "Open a new window",
+    "keywords": ["window", "new", "open"],
+    "category": "Windows"
+  },
+  {
+    "shortcut": "Ctrl+Shift+N",
+    "description": "Open a new window in Incognito mode",
+    "keywords": ["window", "incognito", "private"],
+    "category": "Windows"
+  },
+  {
+    "shortcut": "Ctrl+Shift+W",
+    "description": "Close the current window",
+    "keywords": ["window", "close"],
+    "category": "Windows"
+  },
+  {
+    "shortcut": "Alt+Left Arrow",
+    "description": "Go back to the previous page in history",
+    "keywords": ["back", "history", "navigation"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Alt+Right Arrow",
+    "description": "Go forward to the next page in history",
+    "keywords": ["forward", "history", "navigation"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+R",
+    "description": "Reload the current page",
+    "keywords": ["reload", "refresh", "page"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+Shift+R",
+    "description": "Reload the page, ignoring cache",
+    "keywords": ["reload", "cache", "hard refresh"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+H",
+    "description": "Open the browsing history",
+    "keywords": ["history", "browsing"],
+    "category": "Tools"
+  },
+  {
+    "shortcut": "Ctrl+J",
+    "description": "Open the downloads list",
+    "keywords": ["downloads", "list"],
+    "category": "Tools"
+  },
+  {
+    "shortcut": "Ctrl+Shift+B",
+    "description": "Show or hide the bookmarks bar",
+    "keywords": ["bookmarks", "bar", "toggle"],
+    "category": "Tools"
+  },
+  {
+    "shortcut": "Ctrl+D",
+    "description": "Bookmark the current page",
+    "keywords": ["bookmark", "add"],
+    "category": "Tools"
+  },
+  {
+    "shortcut": "Ctrl+F",
+    "description": "Open the find bar to search the page",
+    "keywords": ["search", "find", "page"],
+    "category": "Search"
+  },
+  {
+    "shortcut": "Ctrl+G",
+    "description": "Go to the next match in page search",
+    "keywords": ["search", "next", "match"],
+    "category": "Search"
+  },
+  {
+    "shortcut": "Ctrl+Shift+G",
+    "description": "Go to the previous match in page search",
+    "keywords": ["search", "previous", "match"],
+    "category": "Search"
+  },
+  {
+    "shortcut": "Ctrl+L",
+    "description": "Focus the address bar",
+    "keywords": ["address bar", "focus", "url"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+Shift+Delete",
+    "description": "Open the clear browsing data menu",
+    "keywords": ["clear", "data", "cache", "history"],
+    "category": "Tools"
+  },
+  {
+    "shortcut": "F12",
+    "description": "Open developer tools",
+    "keywords": ["developer", "tools", "console"],
+    "category": "Development"
+  },
+  {
+    "shortcut": "Ctrl+Shift+I",
+    "description": "Toggle developer tools",
+    "keywords": ["developer", "tools", "console", "toggle"],
+    "category": "Development"
+  }
+]

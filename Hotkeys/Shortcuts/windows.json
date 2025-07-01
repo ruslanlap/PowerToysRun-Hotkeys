@@ -1,0 +1,242 @@
+[
+  {
+    "shortcut": "Win+D",
+    "description": "Show desktop",
+    "keywords": ["show", "desktop", "minimize"],
+    "category": "System"
+  },
+  {
+    "shortcut": "Win+E",
+    "description": "Open File Explorer",
+    "keywords": ["open", "file explorer", "explorer"],
+    "category": "File Explorer"
+  },
+  {
+    "shortcut": "Win+L",
+    "description": "Lock PC / switch user",
+    "keywords": ["lock", "screen", "security"],
+    "category": "System"
+  },
+  {
+    "shortcut": "Win+Tab",
+    "description": "Open Task View (timeline, desktops)",
+    "keywords": ["task", "view", "multitask"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Win+I",
+    "description": "Open Settings",
+    "keywords": ["settings", "preferences"],
+    "category": "System"
+  },
+  {
+    "shortcut": "Win+S",
+    "description": "Open Search",
+    "keywords": ["search", "find", "Cortana"],
+    "category": "Search"
+  },
+  {
+    "shortcut": "Win+A",
+    "description": "Open Action Center",
+    "keywords": ["action center", "notifications"],
+    "category": "System"
+  },
+  {
+    "shortcut": "Win+X",
+    "description": "Open Quick Link menu",
+    "keywords": ["quick link", "power menu"],
+    "category": "System"
+  },
+  {
+    "shortcut": "Win+R",
+    "description": "Open Run dialog",
+    "keywords": ["run", "execute", "dialog"],
+    "category": "System"
+  },
+  {
+    "shortcut": "Win+V",
+    "description": "Open Clipboard history",
+    "keywords": ["clipboard", "history", "paste"],
+    "category": "Clipboard"
+  },
+  {
+    "shortcut": "Ctrl+Shift+Esc",
+    "description": "Open Task Manager",
+    "keywords": ["task manager", "process", "performance"],
+    "category": "System"
+  },
+  {
+    "shortcut": "Alt+Tab",
+    "description": "Switch between open apps",
+    "keywords": ["switch", "app", "task"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Alt+F4",
+    "description": "Close current window or app",
+    "keywords": ["close", "exit", "window"],
+    "category": "Window Management"
+  },
+  {
+    "shortcut": "Ctrl+C",
+    "description": "Copy selected item/text",
+    "keywords": ["copy", "clipboard"],
+    "category": "Clipboard"
+  },
+  {
+    "shortcut": "Ctrl+V",
+    "description": "Paste from clipboard",
+    "keywords": ["paste", "clipboard"],
+    "category": "Clipboard"
+  },
+  {
+    "shortcut": "Ctrl+X",
+    "description": "Cut selected item/text",
+    "keywords": ["cut", "clipboard"],
+    "category": "Clipboard"
+  },
+  {
+    "shortcut": "Ctrl+Z",
+    "description": "Undo last action",
+    "keywords": ["undo", "back"],
+    "category": "Text Editing"
+  },
+  {
+    "shortcut": "Ctrl+Y",
+    "description": "Redo last undone action",
+    "keywords": ["redo", "forward"],
+    "category": "Text Editing"
+  },
+  {
+    "shortcut": "Ctrl+A",
+    "description": "Select all items/text",
+    "keywords": ["select", "all"],
+    "category": "Text Editing"
+  },
+  {
+    "shortcut": "Ctrl+F",
+    "description": "Find text in document or page",
+    "keywords": ["find", "search"],
+    "category": "Text Editing"
+  },
+  {
+    "shortcut": "Ctrl+S",
+    "description": "Save current document or file",
+    "keywords": ["save", "file"],
+    "category": "System"
+  },
+  {
+    "shortcut": "Ctrl+P",
+    "description": "Print current page/document",
+    "keywords": ["print", "document"],
+    "category": "System"
+  },
+  {
+    "shortcut": "Shift+Delete",
+    "description": "Permanently delete (bypass Recycle Bin)",
+    "keywords": ["delete", "permanent", "remove"],
+    "category": "File Explorer"
+  },
+  {
+    "shortcut": "Win+Left Arrow",
+    "description": "Snap window to left half",
+    "keywords": ["snap", "window", "left"],
+    "category": "Window Management"
+  },
+  {
+    "shortcut": "Win+Right Arrow",
+    "description": "Snap window to right half",
+    "keywords": ["snap", "window", "right"],
+    "category": "Window Management"
+  },
+  {
+    "shortcut": "Win+Up Arrow",
+    "description": "Maximize window",
+    "keywords": ["maximize", "window"],
+    "category": "Window Management"
+  },
+  {
+    "shortcut": "Win+Down Arrow",
+    "description": "Minimize or restore window",
+    "keywords": ["minimize", "restore", "window"],
+    "category": "Window Management"
+  },
+  {
+    "shortcut": "Win+Ctrl+D",
+    "description": "Create new virtual desktop",
+    "keywords": ["virtual desktop", "new"],
+    "category": "Virtual Desktops"
+  },
+  {
+    "shortcut": "Win+Ctrl+Left Arrow",
+    "description": "Switch to previous virtual desktop",
+    "keywords": ["virtual desktop", "switch", "left"],
+    "category": "Virtual Desktops"
+  },
+  {
+    "shortcut": "Win+Ctrl+Right Arrow",
+    "description": "Switch to next virtual desktop",
+    "keywords": ["virtual desktop", "switch", "right"],
+    "category": "Virtual Desktops"
+  },
+  {
+    "shortcut": "Win+PrtScn",
+    "description": "Capture entire screen and save to Pictures\\Screenshots",
+    "keywords": ["screenshot", "capture", "save"],
+    "category": "Screenshots"
+  },
+  {
+    "shortcut": "Alt+PrtScn",
+    "description": "Capture active window to clipboard",
+    "keywords": ["screenshot", "active window", "clipboard"],
+    "category": "Screenshots"
+  },
+  {
+    "shortcut": "Win+Shift+S",
+    "description": "Open Snip & Sketch for region capture",
+    "keywords": ["snip", "sketch", "screenshot"],
+    "category": "Screenshots"
+  },
+  {
+    "shortcut": "Win+.",
+    "description": "Open emoji & symbol panel",
+    "keywords": ["emoji", "symbols", "panel"],
+    "category": "Accessibility"
+  },
+  {
+    "shortcut": "Win+H",
+    "description": "Start voice dictation",
+    "keywords": ["dictation", "speech"],
+    "category": "Accessibility"
+  },
+  {
+    "shortcut": "Win+P",
+    "description": "Project to external display",
+    "keywords": ["project", "display", "screen"],
+    "category": "System"
+  },
+  {
+    "shortcut": "Win++",
+    "description": "Zoom in (Magnifier)",
+    "keywords": ["magnifier", "zoom in"],
+    "category": "Accessibility"
+  },
+  {
+    "shortcut": "Win+-",
+    "description": "Zoom out (Magnifier)",
+    "keywords": ["magnifier", "zoom out"],
+    "category": "Accessibility"
+  },
+  {
+    "shortcut": "Ctrl+Shift+N",
+    "description": "Create new folder in File Explorer",
+    "keywords": ["new folder", "explorer"],
+    "category": "File Explorer"
+  },
+  {
+    "shortcut": "F2",
+    "description": "Rename selected file or folder",
+    "keywords": ["rename", "file", "folder"],
+    "category": "File Explorer"
+  }
+]

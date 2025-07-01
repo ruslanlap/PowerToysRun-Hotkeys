@@ -1,0 +1,116 @@
+[
+  {
+    "shortcut": "Ctrl+C",
+    "description": "Copy selection",
+    "keywords": ["copy", "clipboard"],
+    "category": "Clipboard"
+  },
+  {
+    "shortcut": "Ctrl+V",
+    "description": "Paste from clipboard",
+    "keywords": ["paste", "clipboard"],
+    "category": "Clipboard"
+  },
+  {
+    "shortcut": "Ctrl+X",
+    "description": "Cut selection",
+    "keywords": ["cut", "clipboard"],
+    "category": "Clipboard"
+  },
+  {
+    "shortcut": "Ctrl+Z",
+    "description": "Undo last action",
+    "keywords": ["undo", "back"],
+    "category": "Editing"
+  },
+  {
+    "shortcut": "Ctrl+Y",
+    "description": "Redo last undone action",
+    "keywords": ["redo", "forward"],
+    "category": "Editing"
+  },
+  {
+    "shortcut": "Ctrl+S",
+    "description": "Save workbook",
+    "keywords": ["save", "file"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+P",
+    "description": "Print workbook",
+    "keywords": ["print", "file"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+Arrow Key",
+    "description": "Jump to edge of data region",
+    "keywords": ["navigate", "cells", "edge"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+Home",
+    "description": "Go to cell A1",
+    "keywords": ["navigate", "start", "cell"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+End",
+    "description": "Go to last used cell",
+    "keywords": ["navigate", "end", "cell"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "F2",
+    "description": "Edit active cell",
+    "keywords": ["edit", "cell"],
+    "category": "Editing"
+  },
+  {
+    "shortcut": "Ctrl+Shift+L",
+    "description": "Toggle AutoFilter",
+    "keywords": ["filter", "table"],
+    "category": "Data"
+  },
+  {
+    "shortcut": "Ctrl+T",
+    "description": "Create table",
+    "keywords": ["table", "format"],
+    "category": "Data"
+  },
+  {
+    "shortcut": "Alt+= ",
+    "description": "Insert SUM formula",
+    "keywords": ["sum", "formula", "function"],
+    "category": "Formulas"
+  },
+  {
+    "shortcut": "F4",
+    "description": "Repeat last action or toggle absolute reference in formula",
+    "keywords": ["repeat", "absolute", "formula"],
+    "category": "Editing"
+  },
+  {
+    "shortcut": "Ctrl+‘",
+    "description": "Copy formula from cell above",
+    "keywords": ["formula", "copy"],
+    "category": "Editing"
+  },
+  {
+    "shortcut": "Ctrl+Space",
+    "description": "Select entire column",
+    "keywords": ["select", "column"],
+    "category": "Selection"
+  },
+  {
+    "shortcut": "Shift+Space",
+    "description": "Select entire row",
+    "keywords": ["select", "row"],
+    "category": "Selection"
+  },
+  {
+    "shortcut": "Ctrl+Shift+\"+\"",
+    "description": "Insert new rows or columns dialog",
+    "keywords": ["insert", "rows", "columns"],
+    "category": "Editing"
+  }
+]

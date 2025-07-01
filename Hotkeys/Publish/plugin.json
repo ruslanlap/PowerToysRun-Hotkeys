@@ -1,0 +1,14 @@
+{
+  "ID": "4BDC7426E3404ECDB2D502B7B3CEAD9F",
+  "ActionKeyword": "hk",
+  "IsGlobal": false,
+  "Name": "Hotkeys",
+  "Author": "ruslanlap",
+  "Version": "0.0.1",
+  "Language": "csharp",
+  "Website": "https://github.com/ruslanlap/PowerToysRun-Hotkeys",
+  "ExecuteFileName": "Community.PowerToys.Run.Plugin.Hotkeys.dll",
+  "IcoPathDark": "Images\\hotkeys.dark.png",
+  "IcoPathLight": "Images\\hotkeys.light.png",
+  "DynamicLoading": false
+}

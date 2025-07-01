@@ -1,0 +1,140 @@
+[
+  {
+    "shortcut": "Ctrl+N",
+    "description": "New document",
+    "keywords": ["new", "document", "file"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+O",
+    "description": "Open file",
+    "keywords": ["open", "file", "load"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+W",
+    "description": "Close document",
+    "keywords": ["close", "document", "file"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+S",
+    "description": "Save",
+    "keywords": ["save", "file", "document"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+Shift+S",
+    "description": "Save As…",
+    "keywords": ["save as", "export", "file"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+Z",
+    "description": "Undo / redo last action",
+    "keywords": ["undo", "redo", "history"],
+    "category": "Edit"
+  },
+  {
+    "shortcut": "Ctrl+Alt+Z",
+    "description": "Step backward (multiple undos)",
+    "keywords": ["step back", "history", "undo"],
+    "category": "Edit"
+  },
+  {
+    "shortcut": "Ctrl+Shift+Z",
+    "description": "Step forward",
+    "keywords": ["step forward", "redo", "history"],
+    "category": "Edit"
+  },
+  {
+    "shortcut": "Ctrl+T",
+    "description": "Free Transform",
+    "keywords": ["transform", "scale", "rotate"],
+    "category": "Edit"
+  },
+  {
+    "shortcut": "Ctrl+J",
+    "description": "Duplicate layer",
+    "keywords": ["duplicate", "layer", "copy"],
+    "category": "Layer"
+  },
+  {
+    "shortcut": "Ctrl+Shift+N",
+    "description": "New layer",
+    "keywords": ["new", "layer", "create"],
+    "category": "Layer"
+  },
+  {
+    "shortcut": "Ctrl+G",
+    "description": "Group layers",
+    "keywords": ["group", "layers", "folder"],
+    "category": "Layer"
+  },
+  {
+    "shortcut": "Ctrl+E",
+    "description": "Merge selected layers",
+    "keywords": ["merge", "layers", "combine"],
+    "category": "Layer"
+  },
+  {
+    "shortcut": "Ctrl+Alt+G",
+    "description": "Create clipping mask",
+    "keywords": ["clipping mask", "layer", "clip"],
+    "category": "Layer"
+  },
+  {
+    "shortcut": "B",
+    "description": "Brush tool",
+    "keywords": ["brush", "paint", "tool"],
+    "category": "Tool"
+  },
+  {
+    "shortcut": "E",
+    "description": "Eraser tool",
+    "keywords": ["eraser", "erase", "tool"],
+    "category": "Tool"
+  },
+  {
+    "shortcut": "L",
+    "description": "Lasso tool",
+    "keywords": ["lasso", "select", "tool"],
+    "category": "Tool"
+  },
+  {
+    "shortcut": "M",
+    "description": "Marquee tool",
+    "keywords": ["marquee", "select", "tool"],
+    "category": "Tool"
+  },
+  {
+    "shortcut": "V",
+    "description": "Move tool",
+    "keywords": ["move", "select", "tool"],
+    "category": "Tool"
+  },
+  {
+    "shortcut": "Ctrl+Alt+Shift+S",
+    "description": "Save for Web",
+    "keywords": ["export", "web", "save"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+M",
+    "description": "Curves",
+    "keywords": ["curves", "levels", "adjust"],
+    "category": "Adjustments"
+  },
+  {
+    "shortcut": "Ctrl+L",
+    "description": "Levels",
+    "keywords": ["levels", "adjust", "tones"],
+    "category": "Adjustments"
+  },
+  {
+    "shortcut": "Ctrl+U",
+    "description": "Hue/Saturation",
+    "keywords": ["hue", "saturation", "color"],
+    "category": "Adjustments"
+  }
+]

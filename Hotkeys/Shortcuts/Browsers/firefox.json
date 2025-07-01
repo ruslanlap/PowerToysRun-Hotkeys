@@ -1,0 +1,134 @@
+[
+  {
+    "shortcut": "Ctrl+T",
+    "description": "Open new tab",
+    "keywords": ["new", "tab", "open"],
+    "category": "Tabs"
+  },
+  {
+    "shortcut": "Ctrl+W",
+    "description": "Close current tab",
+    "keywords": ["close", "tab", "exit"],
+    "category": "Tabs"
+  },
+  {
+    "shortcut": "Ctrl+Shift+T",
+    "description": "Reopen last closed tab",
+    "keywords": ["reopen", "closed", "tab"],
+    "category": "Tabs"
+  },
+  {
+    "shortcut": "Ctrl+Tab",
+    "description": "Switch to next tab",
+    "keywords": ["next", "tab", "switch"],
+    "category": "Tabs"
+  },
+  {
+    "shortcut": "Ctrl+Shift+Tab",
+    "description": "Switch to previous tab",
+    "keywords": ["previous", "tab", "switch"],
+    "category": "Tabs"
+  },
+  {
+    "shortcut": "Ctrl+L",
+    "description": "Focus address bar",
+    "keywords": ["focus", "address", "bar"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+K",
+    "description": "Focus search bar",
+    "keywords": ["focus", "search", "bar"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+R",
+    "description": "Reload current page",
+    "keywords": ["reload", "refresh", "page"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+Shift+R",
+    "description": "Hard reload (ignore cache)",
+    "keywords": ["reload", "hard", "cache"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "F11",
+    "description": "Toggle fullscreen",
+    "keywords": ["fullscreen", "toggle", "view"],
+    "category": "View"
+  },
+  {
+    "shortcut": "Ctrl+H",
+    "description": "Open History sidebar",
+    "keywords": ["history", "sidebar", "view"],
+    "category": "Sidebar"
+  },
+  {
+    "shortcut": "Ctrl+J",
+    "description": "Open Downloads panel",
+    "keywords": ["downloads", "panel", "view"],
+    "category": "Sidebar"
+  },
+  {
+    "shortcut": "Ctrl+Shift+Del",
+    "description": "Clear recent history",
+    "keywords": ["clear", "history", "privacy"],
+    "category": "Privacy & Security"
+  },
+  {
+    "shortcut": "Ctrl+D",
+    "description": "Bookmark current page",
+    "keywords": ["bookmark", "page", "save"],
+    "category": "Bookmarks"
+  },
+  {
+    "shortcut": "Ctrl+Shift+B",
+    "description": "Toggle Bookmarks Toolbar",
+    "keywords": ["bookmarks", "toolbar", "toggle"],
+    "category": "Bookmarks"
+  },
+  {
+    "shortcut": "Ctrl+1 … Ctrl+8",
+    "description": "Switch to tab 1–8",
+    "keywords": ["switch", "tab", "number"],
+    "category": "Tabs"
+  },
+  {
+    "shortcut": "Ctrl+9",
+    "description": "Switch to last tab",
+    "keywords": ["switch", "last", "tab"],
+    "category": "Tabs"
+  },
+  {
+    "shortcut": "Ctrl+F",
+    "description": "Find in page",
+    "keywords": ["find", "search", "page"],
+    "category": "Text Editing"
+  },
+  {
+    "shortcut": "Ctrl++ / Ctrl+-",
+    "description": "Zoom in/out",
+    "keywords": ["zoom", "in", "out"],
+    "category": "View"
+  },
+  {
+    "shortcut": "Ctrl+0",
+    "description": "Reset zoom level",
+    "keywords": ["zoom", "reset", "view"],
+    "category": "View"
+  },
+  {
+    "shortcut": "Ctrl+P",
+    "description": "Print page",
+    "keywords": ["print", "page", "document"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+S",
+    "description": "Save page as…",
+    "keywords": ["save", "page", "file"],
+    "category": "File"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "shortcut": "Ctrl+B",
+    "description": "Bold text",
+    "keywords": ["bold", "formatting"],
+    "category": "Formatting"
+  },
+  {
+    "shortcut": "Ctrl+I",
+    "description": "Italicize text",
+    "keywords": ["italic", "formatting"],
+    "category": "Formatting"
+  },
+  {
+    "shortcut": "Ctrl+U",
+    "description": "Underline text",
+    "keywords": ["underline", "formatting"],
+    "category": "Formatting"
+  },
+  {
+    "shortcut": "Ctrl+C",
+    "description": "Copy selection",
+    "keywords": ["copy", "clipboard"],
+    "category": "Clipboard"
+  },
+  {
+    "shortcut": "Ctrl+V",
+    "description": "Paste from clipboard",
+    "keywords": ["paste", "clipboard"],
+    "category": "Clipboard"
+  },
+  {
+    "shortcut": "Ctrl+X",
+    "description": "Cut selection",
+    "keywords": ["cut", "clipboard"],
+    "category": "Clipboard"
+  },
+  {
+    "shortcut": "Ctrl+Z",
+    "description": "Undo last action",
+    "keywords": ["undo", "back"],
+    "category": "Editing"
+  },
+  {
+    "shortcut": "Ctrl+Y",
+    "description": "Redo last undone action",
+    "keywords": ["redo", "forward"],
+    "category": "Editing"
+  },
+  {
+    "shortcut": "Ctrl+S",
+    "description": "Save document",
+    "keywords": ["save", "file"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+P",
+    "description": "Print document",
+    "keywords": ["print", "file"],
+    "category": "File"
+  },
+  {
+    "shortcut": "Ctrl+Home",
+    "description": "Go to beginning of document",
+    "keywords": ["navigate", "start"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+End",
+    "description": "Go to end of document",
+    "keywords": ["navigate", "end"],
+    "category": "Navigation"
+  },
+  {
+    "shortcut": "Ctrl+F",
+    "description": "Open find dialog",
+    "keywords": ["find", "search"],
+    "category": "Editing"
+  },
+  {
+    "shortcut": "Ctrl+H",
+    "description": "Open replace dialog",
+    "keywords": ["replace", "search"],
+    "category": "Editing"
+  },
+  {
+    "shortcut": "Ctrl+K",
+    "description": "Insert hyperlink",
+    "keywords": ["link", "hyperlink"],
+    "category": "Insert"
+  },
+  {
+    "shortcut": "Ctrl+Shift+N",
+    "description": "Apply Normal style",
+    "keywords": ["style", "format"],
+    "category": "Formatting"
+  },
+  {
+    "shortcut": "Ctrl+Shift+L",
+    "description": "Apply bullet list",
+    "keywords": ["list", "bullets"],
+    "category": "Formatting"
+  },
+  {
+    "shortcut": "Ctrl+E",
+    "description": "Center paragraph",
+    "keywords": ["align", "center"],
+    "category": "Formatting"
+  },
+  {
+    "shortcut": "Ctrl+L",
+    "description": "Left-align paragraph",
+    "keywords": ["align", "left"],
+    "category": "Formatting"
+  },
+  {
+    "shortcut": "Ctrl+R",
+    "description": "Right-align paragraph",
+    "keywords": ["align", "right"],
+    "category": "Formatting"
+  }
+]
