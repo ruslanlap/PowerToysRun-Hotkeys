@@ -4,7 +4,7 @@
   "IsGlobal": false,
   "Name": "Hotkeys",
   "Author": "ruslanlap",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "Language": "csharp",
   "Website": "https://github.com/ruslanlap/PowerToysRun-Hotkeys",
   "ExecuteFileName": "Community.PowerToys.Run.Plugin.Hotkeys.dll",

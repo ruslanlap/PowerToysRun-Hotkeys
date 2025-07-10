@@ -2,19 +2,14 @@ name: Build and Release Hotkeys Plugin
 
 on:
   push:
-    branches:
-      - main
-      - master
     tags:
       - 'v*'
-  # Add pull request protection
-  pull_request:
-    branches: [main, master]
-    types: [opened, synchronize]
 
-# Minimal default permissions (principle of least privilege)
+# Permissions for GITHUB_TOKEN (principle of least privilege)
 permissions:
-  contents: read
+  contents: write  # Needed for creating releases
+  issues: read
+  pull-requests: read
 
 # Add restrictions for parallel runs
 concurrency:
@@ -24,24 +19,18 @@ concurrency:
 jobs:
   build:
     runs-on: windows-latest
-    # Minimal permissions for build job
-    permissions:
-      contents: read  # Only for checkout
     strategy:
       matrix:
         platform: [x64, arm64]
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+        uses: actions/checkout@v4
       
       - name: Setup .NET
-        uses: actions/setup-dotnet@6bd8b7f7774af54e05809fcc5431931b3eb1ddee # v4.0.1
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '9.0.x'
-      
-      - name: Build
-        run: dotnet build Hotkeys/Community.PowerToys.Run.Plugin.Hotkeys/Community.PowerToys.Run.Plugin.Hotkeys.csproj -c Release -p:Platform="${{ matrix.platform }}" --self-contained true
       
       - name: Get version
         id: get_version
@@ -51,9 +40,25 @@ jobs:
             echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
             echo "IS_TAG=true" >> $GITHUB_OUTPUT
           else
-            echo "VERSION=0.90.1" >> $GITHUB_OUTPUT
+            echo "VERSION=$(date +'%Y.%m.%d')-$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
             echo "IS_TAG=false" >> $GITHUB_OUTPUT
           fi
+      
+      - name: Update plugin.json version
+        run: |
+          $version = "${{ steps.get_version.outputs.VERSION }}"
+          $pluginJsonPath = "Hotkeys/Community.PowerToys.Run.Plugin.Hotkeys/plugin.json"
+          
+          if (Test-Path $pluginJsonPath) {
+            $content = Get-Content $pluginJsonPath -Raw | ConvertFrom-Json
+            $content.Version = $version
+            $content | ConvertTo-Json -Depth 10 | Set-Content $pluginJsonPath -Encoding UTF8
+            Write-Host "Updated plugin.json version to: $version"
+          }
+        shell: pwsh
+      
+      - name: Build
+        run: dotnet build Hotkeys/Community.PowerToys.Run.Plugin.Hotkeys/Community.PowerToys.Run.Plugin.Hotkeys.csproj -c Release -p:Platform="${{ matrix.platform }}" --self-contained true
       
       - name: Debug Output
         run: |
@@ -65,7 +70,7 @@ jobs:
       
       - name: Copy build output to artifacts directory
         run: |
-          $artifactDir = "artifacts/Definition-v${{ steps.get_version.outputs.VERSION }}-${{ matrix.platform }}"
+          $artifactDir = "artifacts/Hotkeys-${{ steps.get_version.outputs.VERSION }}-${{ matrix.platform }}"
           
           # Create the artifact directory
           New-Item -ItemType Directory -Force -Path $artifactDir
@@ -166,6 +171,23 @@ jobs:
                 }
               }
               
+              # Remove unnecessary PowerToys DLLs that are provided by the host
+              $unnecessaryDlls = @(
+                "PowerToys.Common.UI.dll",
+                "PowerToys.ManagedCommon.dll", 
+                "PowerToys.Settings.UI.Lib.dll",
+                "Wox.Infrastructure.dll",
+                "Wox.Plugin.dll"
+              )
+              
+              foreach ($dll in $unnecessaryDlls) {
+                $dlls = Get-ChildItem -Path "$artifactDir/Hotkeys" -Recurse -Filter $dll
+                foreach ($item in $dlls) {
+                  Write-Host "Removing unnecessary DLL: $($item.FullName)"
+                  Remove-Item $item.FullName -Force
+                }
+              }
+              
               Write-Host "Files copied successfully from runtime folder"
             } else {
               # If no runtime folder, check for any subdirectories
@@ -185,21 +207,15 @@ jobs:
       
       - name: Create ZIP archive
         run: |
-          $artifactDir = "artifacts/Definition-v${{ steps.get_version.outputs.VERSION }}-${{ matrix.platform }}"
-          
-          # Create the zip files with names that match the README.md download links
-          if ("${{ matrix.platform }}" -eq "x64") {
-            $zipFile = "Hotkeys-x64.zip"
-          } else {
-            $zipFile = "Hotkeys-arm64.zip"
-          }
+          $artifactDir = "artifacts/Hotkeys-${{ steps.get_version.outputs.VERSION }}-${{ matrix.platform }}"
+          $zipName = "Hotkeys-${{ steps.get_version.outputs.VERSION }}-${{ matrix.platform }}.zip"
           
           # Create the zip file
-          Compress-Archive -Path "$artifactDir/Hotkeys" -DestinationPath "artifacts/$zipFile"
+          Compress-Archive -Path "$artifactDir/Hotkeys" -DestinationPath "artifacts/$zipName"
         shell: pwsh
       
       - name: Upload build artifacts
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifacts-${{ matrix.platform }}
           path: artifacts/*.zip
@@ -209,19 +225,18 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
-    # Write permissions only for release job
-    permissions:
-      contents: write  # Only for creating releases
     if: startsWith(github.ref, 'refs/tags/v')
-    # Optional: Use environment for additional security
-    # environment: production  # Requires manual approval
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+        uses: actions/checkout@v4
+      
+      - name: Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
       
       - name: Download all artifacts
-        uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4.1.8
+        uses: actions/download-artifact@v4
         with:
           path: downloaded-artifacts
       
@@ -239,14 +254,11 @@ jobs:
       - name: Prepare artifacts for release
         run: |
           mkdir -p release-artifacts
-          cp downloaded-artifacts/build-artifacts-x64/*.zip release-artifacts/ || echo "Failed to copy x64 artifact"
-          cp downloaded-artifacts/build-artifacts-arm64/*.zip release-artifacts/ || echo "Failed to copy ARM64 artifact"
+          VERSION="${{ steps.get_version.outputs.VERSION }}"
+          cp downloaded-artifacts/build-artifacts-x64/Hotkeys-${VERSION}-x64.zip release-artifacts/ || echo "Failed to copy x64 artifact"
+          cp downloaded-artifacts/build-artifacts-arm64/Hotkeys-${VERSION}-arm64.zip release-artifacts/ || echo "Failed to copy ARM64 artifact"
           echo "Listing release artifacts:"
           ls -la release-artifacts
-      
-      - name: Get version from tag
-        id: get_version
-        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
       
       - name: Prepare Release Notes
         id: release_notes
@@ -315,42 +327,32 @@ jobs:
           cat release_notes.md >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
       
+      - name: Generate SHA256 checksums
+        run: |
+          cd release-artifacts
+          VERSION="${{ steps.get_version.outputs.VERSION }}"
+          sha256sum Hotkeys-${VERSION}-x64.zip | tr 'a-f' 'A-F' > Hotkeys-${VERSION}-x64.zip.sha256
+          sha256sum Hotkeys-${VERSION}-arm64.zip | tr 'a-f' 'A-F' > Hotkeys-${VERSION}-arm64.zip.sha256
+          
+          # Create combined checksums.txt file
+          echo "SHA256 Checksums for Hotkeys Plugin v${VERSION}" > checksums.txt
+          echo "Generated on: $(date -u)" >> checksums.txt
+          echo "" >> checksums.txt
+          cat Hotkeys-${VERSION}-x64.zip.sha256 >> checksums.txt
+          cat Hotkeys-${VERSION}-arm64.zip.sha256 >> checksums.txt
+      
       - name: Create Release
-        uses: softprops/action-gh-release@c062e08bd532815e2082a85e87e3ef29c3e6d191 # v2.0.8
+        uses: softprops/action-gh-release@v1
         with:
           name: Hotkeys Plugin v${{ steps.get_version.outputs.VERSION }}
           body: ${{ steps.release_notes.outputs.RELEASE_NOTES }}
           draft: false
           prerelease: false
           files: |
-            release-artifacts/*.zip
+            release-artifacts/Hotkeys-${{ steps.get_version.outputs.VERSION }}-x64.zip
+            release-artifacts/Hotkeys-${{ steps.get_version.outputs.VERSION }}-arm64.zip
+            release-artifacts/Hotkeys-${{ steps.get_version.outputs.VERSION }}-x64.zip.sha256
+            release-artifacts/Hotkeys-${{ steps.get_version.outputs.VERSION }}-arm64.zip.sha256
+            release-artifacts/checksums.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  # Optional: Add security scanning job
-  security-scan:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      security-events: write  # For CodeQL
-    if: github.event_name == 'pull_request'
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
-      
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@4f3212b61783c3c68e8309a0f18a699764811cda # v3.27.1
-        with:
-          languages: csharp
-      
-      - name: Setup .NET
-        uses: actions/setup-dotnet@6bd8b7f7774af54e05809fcc5431931b3eb1ddee # v4.0.1
-        with:
-          dotnet-version: '9.0.x'
-      
-      - name: Build for analysis
-        run: dotnet build Hotkeys/Community.PowerToys.Run.Plugin.Hotkeys/Community.PowerToys.Run.Plugin.Hotkeys.csproj -c Release
-      
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@4f3212b61783c3c68e8309a0f18a699764811cda # v3.27.1
