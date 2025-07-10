@@ -177,11 +177,6 @@ To verify the plugin is correctly installed:
 ### Plugin Settings (PowerToys Settings → PowerToys Run → Hotkeys)
 
 - **Action Keyword**: Default `hk` (customizable)
-- **Max Results**: Default `10` (adjust result count)
-- **Enable Fuzzy Search**: Enable/disable typo tolerance
-- **Show Icons**: Toggle application icons in results
-- **Case Sensitive**: Enable case-sensitive search
-- **Enable Context Menu**: Show/hide right-click menu
 
 ### Custom Shortcuts
 
