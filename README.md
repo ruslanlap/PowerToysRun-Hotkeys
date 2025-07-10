@@ -20,7 +20,7 @@
   </a>
   <img src="https://img.shields.io/maintenance/yes/2025" alt="Maintenance">
   <img src="https://img.shields.io/badge/C%23-.NET-512BD4" alt="C# .NET">
-  <img src="https://img.shields.io/badge/version-v1.2.0-brightgreen" alt="Version">
+  <img src="https://img.shields.io/badge/version-v1.0.1-brightgreen" alt="Version">
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome">
   <a href="https://github.com/ruslanlap/PowerToysRun-Hotkeys/stargazers">
     <img src="https://img.shields.io/github/stars/ruslanlap/PowerToysRun-Hotkeys" alt="GitHub stars">
@@ -44,10 +44,10 @@
 </div>
 
 <div align="center">
-  <a href="https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.0.0/Hotkeys-x64.zip">
+  <a href="https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.0.1/Hotkeys-1.0.1-x64.zip">
     <img src="https://img.shields.io/badge/⬇️_DOWNLOAD-x64-blue?style=for-the-badge&logo=github" alt="Download x64">
   </a>
-  <a href="https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.0.0/Hotkeys-arm64.zip">
+  <a href="https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.0.1/Hotkeys-1.0.1-arm64.zip">
     <img src="https://img.shields.io/badge/⬇️_DOWNLOAD-ARM64-blue?style=for-the-badge&logo=github" alt="Download ARM64">
   </a>
 </div>
@@ -110,6 +110,15 @@ Hotkeys is a powerful plugin for [Microsoft PowerToys Run](https://github.com/mi
   <p><em>Rich context menu with copy and search options</em></p>
 </div>
 
+## 📝 Changelog
+
+### v1.0.1 (July 10, 2025)
+- Fixed package naming convention to comply with PowerToys Run standards
+- Added SHA256 checksums for all release packages
+- Removed unnecessary dependencies from the package
+- Synchronized version between plugin.json and release artifacts
+- Improved GitHub Actions workflow for better release automation
+
 ## 🚀 Installation
 
 ### Prerequisites
@@ -121,8 +130,8 @@ Hotkeys is a powerful plugin for [Microsoft PowerToys Run](https://github.com/mi
 ### Quick Install
 
 1. Download the appropriate ZIP for your system architecture:
-   - [x64 version](https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.0.0/Hotkeys-x64.zip)
-   - [ARM64 version](https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.0.0/Hotkeys-arm64.zip)
+   - [x64 version](https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.0.1/Hotkeys-1.0.1-x64.zip)
+   - [ARM64 version](https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.0.1/Hotkeys-1.0.1-arm64.zip)
 
 2. Extract the ZIP to:
    ```
