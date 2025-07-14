@@ -171,19 +171,24 @@ jobs:
                 }
               }
               
-              # Remove unnecessary PowerToys DLLs that are provided by the host
-              $unnecessaryDlls = @(
+              # Remove unnecessary PowerToys DLLs and PDBs that are provided by the host
+              $unnecessaryFiles = @(
                 "PowerToys.Common.UI.dll",
-                "PowerToys.ManagedCommon.dll", 
+                "PowerToys.Common.UI.pdb",
+                "PowerToys.ManagedCommon.dll",
+                "PowerToys.ManagedCommon.pdb", 
                 "PowerToys.Settings.UI.Lib.dll",
+                "PowerToys.Settings.UI.Lib.pdb",
                 "Wox.Infrastructure.dll",
-                "Wox.Plugin.dll"
+                "Wox.Infrastructure.pdb",
+                "Wox.Plugin.dll",
+                "Wox.Plugin.pdb"
               )
               
-              foreach ($dll in $unnecessaryDlls) {
-                $dlls = Get-ChildItem -Path "$artifactDir/Hotkeys" -Recurse -Filter $dll
-                foreach ($item in $dlls) {
-                  Write-Host "Removing unnecessary DLL: $($item.FullName)"
+              foreach ($file in $unnecessaryFiles) {
+                $files = Get-ChildItem -Path "$artifactDir/Hotkeys" -Recurse -Filter $file
+                foreach ($item in $files) {
+                  Write-Host "Removing unnecessary file: $($item.FullName)"
                   Remove-Item $item.FullName -Force
                 }
               }
