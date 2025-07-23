@@ -41,6 +41,9 @@
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
   </a>
+  <img src="https://img.shields.io/badge/Awesome-Yes-orange" alt="Awesome">
+  <a href="https://github.com/hlaueriksson/awesome-powertoys-run-plugins">
+    <img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome PowerToys Run Plugins"> </a>
 </div>
 
 <div align="center">
