@@ -1,4 +1,3 @@
-// ===== 1. Models/ShortcutInfo.cs =====
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -6,52 +5,52 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Models
 {
     public class ShortcutInfo
     {
-        public string Shortcut { get; set; }
-        public string Description { get; set; }
-        public List<string> Keywords { get; set; } = new List<string>();
-        public string Category { get; set; }
-        public string Source { get; set; }
-        public string Language { get; set; }
+        public string Shortcut { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public List<string> Keywords { get; set; } = new();
+        public string Category { get; set; } = string.Empty;
+        public string Source { get; set; } = string.Empty;
+        public string Language { get; set; } = string.Empty;
 
         /// <summary>
-        /// Нормалізований shortcut для кращого пошуку (не зберігається в JSON)
+        /// Normalized shortcut for better search matching (not stored in JSON)
         /// </summary>
         [JsonIgnore]
-        public string NormalizedShortcut { get; set; }
+        public string NormalizedShortcut { get; set; } = string.Empty;
 
         /// <summary>
-        /// Частота використання для покращення ранжування (опціонально)
+        /// Usage frequency for improved ranking (optional)
         /// </summary>
         [JsonIgnore]
-        public int UsageCount { get; set; } = 0;
+        public int UsageCount { get; set; }
 
         /// <summary>
-        /// Альтернативні назви shortcut для кращого пошуку
+        /// Alternative shortcut names for better search matching
         /// </summary>
-        public List<string> Aliases { get; set; } = new List<string>();
+        public List<string> Aliases { get; set; } = new();
 
         /// <summary>
-        /// Примітки або додаткова інформація
+        /// Notes or additional information
         /// </summary>
-        public string Notes { get; set; }
+        public string Notes { get; set; } = string.Empty;
 
         /// <summary>
-        /// Чи є цей shortcut універсальним (працює в багатьох програмах)
+        /// Whether this shortcut is universal (works in many applications)
         /// </summary>
-        public bool IsGlobal { get; set; } = false;
+        public bool IsGlobal { get; set; }
 
         /// <summary>
-        /// Платформа (Windows, Mac, Linux)
+        /// Platform (Windows, Mac, Linux)
         /// </summary>
         public string Platform { get; set; } = "Windows";
 
         /// <summary>
-        /// Версія програми, для якої актуальний shortcut
+        /// Application version for which this shortcut is relevant
         /// </summary>
-        public string Version { get; set; }
+        public string Version { get; set; } = string.Empty;
 
         /// <summary>
-        /// Рівень складності (Beginner, Intermediate, Advanced)
+        /// Difficulty level (Beginner, Intermediate, Advanced)
         /// </summary>
         public string Difficulty { get; set; } = "Beginner";
     }

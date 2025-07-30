@@ -1,5 +1,3 @@
-// ===== 8. Refactored Main.cs =====
-using ManagedCommon;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,10 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using Wox.Plugin;
-using PowerToysRun.ShortcutFinder.Plugin.Helpers;
-using Community.PowerToys.Run.Plugin.Hotkeys.Services;
 using Community.PowerToys.Run.Plugin.Hotkeys.Models;
+using Community.PowerToys.Run.Plugin.Hotkeys.Services;
+using ManagedCommon;
+using PowerToysRun.ShortcutFinder.Plugin.Helpers;
+using Wox.Plugin;
 
 namespace Community.PowerToys.Run.Plugin.Hotkeys
 {
@@ -25,10 +24,9 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys
         private string IconPath { get; set; }
         private bool Disposed { get; set; }
 
-        // Dependency services
-        private IShortcutRepository _shortcutRepository;
-        private IQueryProcessor _queryProcessor;
-        private ILogger _logger;
+        private IShortcutRepository? _shortcutRepository;
+        private IQueryProcessor? _queryProcessor;
+        private ILogger? _logger;
 
         public void Init(PluginInitContext context)
         {
@@ -65,21 +63,22 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys
 
         public List<Result> Query(Query query)
         {
+            if (_queryProcessor == null)
+            {
+                return CreateErrorResult(query.Search, "Plugin not properly initialized");
+            }
+
             try
             {
-                // Since PowerToys Run expects synchronous results, we need to handle async calls carefully
                 var task = _queryProcessor.ProcessQueryAsync(query, IconPath);
-
-                // Use ConfigureAwait(false) to avoid deadlocks and wait with timeout
+                
                 if (task.Wait(TimeSpan.FromSeconds(5)))
                 {
                     return task.Result;
                 }
-                else
-                {
-                    _logger?.LogWarning($"Query processing timed out for: {query.Search}");
-                    return CreateTimeoutResult(query.Search);
-                }
+                
+                _logger?.LogWarning($"Query processing timed out for: {query.Search}");
+                return CreateTimeoutResult(query.Search);
             }
             catch (Exception ex)
             {
@@ -88,33 +87,27 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys
             }
         }
 
-        private List<Result> CreateTimeoutResult(string search)
+        private List<Result> CreateTimeoutResult(string search) => new()
         {
-            return new List<Result>
+            new Result
             {
-                new Result
-                {
-                    IcoPath = IconPath,
-                    Title = "Query timed out",
-                    SubTitle = $"Search for '{search}' took too long. Please try again.",
-                    Action = _ => true
-                }
-            };
-        }
+                IcoPath = IconPath,
+                Title = "Query timed out",
+                SubTitle = $"Search for '{search}' took too long. Please try again.",
+                Action = _ => true
+            }
+        };
 
-        private List<Result> CreateErrorResult(string search, string errorMessage)
+        private List<Result> CreateErrorResult(string search, string errorMessage) => new()
         {
-            return new List<Result>
+            new Result
             {
-                new Result
-                {
-                    IcoPath = IconPath,
-                    Title = "Error occurred",
-                    SubTitle = $"Failed to process '{search}': {errorMessage}",
-                    Action = _ => true
-                }
-            };
-        }
+                IcoPath = IconPath,
+                Title = "Error occurred",
+                SubTitle = $"Failed to process '{search}': {errorMessage}",
+                Action = _ => true
+            }
+        };
 
         public List<ContextMenuResult> LoadContextMenus(Result selectedResult)
         {
@@ -122,46 +115,9 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys
             {
                 return new List<ContextMenuResult>
                 {
-                    new ContextMenuResult
-                    {
-                        PluginName = Name,
-                        Title = "Copy shortcut to clipboard (Ctrl+C)",
-                        FontFamily = "Segoe MDL2 Assets",
-                        Glyph = "\xE8C8",
-                        AcceleratorKey = Key.C,
-                        AcceleratorModifiers = ModifierKeys.Control,
-                        Action = _ =>
-                        {
-                            ClipboardHelper.SetClipboard(shortcut.Shortcut);
-                            Context.API.ShowMsg("Copied", $"'{shortcut.Shortcut}' copied to clipboard", string.Empty);
-                            return true;
-                        }
-                    },
-                    new ContextMenuResult
-                    {
-                        PluginName = Name,
-                        Title = "Copy description",
-                        FontFamily = "Segoe MDL2 Assets",
-                        Glyph = "\xE8C8",
-                        Action = _ =>
-                        {
-                            ClipboardHelper.SetClipboard(shortcut.Description);
-                            Context.API.ShowMsg("Copied", $"Description copied to clipboard", string.Empty);
-                            return true;
-                        }
-                    },
-                    new ContextMenuResult
-                    {
-                        PluginName = Name,
-                        Title = $"Show all {shortcut.Source} shortcuts",
-                        FontFamily = "Segoe MDL2 Assets",
-                        Glyph = "\xE8FD",
-                        Action = _ =>
-                        {
-                            Context.API.ChangeQuery($"hk list:{shortcut.Source}", true);
-                            return false;
-                        }
-                    }
+                    CreateCopyShortcutContextMenu(shortcut),
+                    CreateCopyDescriptionContextMenu(shortcut),
+                    CreateShowAllShortcutsContextMenu(shortcut)
                 };
             }
             else if (selectedResult.ContextData is string search)
@@ -222,5 +178,48 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys
             : "Images/hotkeys.dark.png";
 
         private void OnThemeChanged(Theme currentTheme, Theme newTheme) => UpdateIconPath(newTheme);
+
+        private ContextMenuResult CreateCopyShortcutContextMenu(ShortcutInfo shortcut) => new()
+        {
+            PluginName = Name,
+            Title = "Copy shortcut to clipboard (Ctrl+C)",
+            FontFamily = "Segoe MDL2 Assets",
+            Glyph = "\xE8C8",
+            AcceleratorKey = Key.C,
+            AcceleratorModifiers = ModifierKeys.Control,
+            Action = _ =>
+            {
+                ClipboardHelper.SetClipboard(shortcut.Shortcut);
+                Context.API.ShowMsg("Copied", $"'{shortcut.Shortcut}' copied to clipboard", string.Empty);
+                return true;
+            }
+        };
+
+        private ContextMenuResult CreateCopyDescriptionContextMenu(ShortcutInfo shortcut) => new()
+        {
+            PluginName = Name,
+            Title = "Copy description",
+            FontFamily = "Segoe MDL2 Assets",
+            Glyph = "\xE8C8",
+            Action = _ =>
+            {
+                ClipboardHelper.SetClipboard(shortcut.Description);
+                Context.API.ShowMsg("Copied", "Description copied to clipboard", string.Empty);
+                return true;
+            }
+        };
+
+        private ContextMenuResult CreateShowAllShortcutsContextMenu(ShortcutInfo shortcut) => new()
+        {
+            PluginName = Name,
+            Title = $"Show all {shortcut.Source} shortcuts",
+            FontFamily = "Segoe MDL2 Assets",
+            Glyph = "\xE8FD",
+            Action = _ =>
+            {
+                Context.API.ChangeQuery($"hk list:{shortcut.Source}", true);
+                return false;
+            }
+        };
     }
 }

@@ -1,4 +1,3 @@
-// ===== 3. ShortcutRepository.cs =====
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -9,12 +8,12 @@ using System.Reactive.Subjects;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using ManagedCommon;
 using Community.PowerToys.Run.Plugin.Hotkeys.Models;
+using ManagedCommon;
 
 namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
 {
-    public class ShortcutRepository : IShortcutRepository, IDisposable
+    public class ShortcutRepository : IShortcutRepository
     {
         private readonly string _shortcutsDirectory;
         private readonly ILogger _logger;
@@ -23,7 +22,7 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
         private readonly ConcurrentDictionary<string, ShortcutInfo> _allShortcuts;
         private readonly SemaphoreSlim _reloadSemaphore;
 
-        private FileSystemWatcher _watcher;
+        private FileSystemWatcher? _watcher;
         private bool _disposed;
 
         public ShortcutRepository(string shortcutsDirectory, ILogger logger)
@@ -51,7 +50,7 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
             return _shortcutsBySource.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.ToList());
         }
 
-        public async Task<List<ShortcutInfo>> SearchShortcutsAsync(string query, string appFilter = null, CancellationToken cancellationToken = default)
+        public async Task<List<ShortcutInfo>> SearchShortcutsAsync(string query, string? appFilter = null, CancellationToken cancellationToken = default)
         {
             if (string.IsNullOrWhiteSpace(query))
                 return new List<ShortcutInfo>();
@@ -61,11 +60,10 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
             var searchQuery = query.ToLowerInvariant().Trim();
             var shortcuts = _allShortcuts.Values.AsEnumerable();
 
-            // Apply app filter if specified
             if (!string.IsNullOrWhiteSpace(appFilter))
             {
                 var filter = appFilter.ToLowerInvariant();
-                shortcuts = shortcuts.Where(s => s.Source?.ToLowerInvariant().Contains(filter) == true);
+                shortcuts = shortcuts.Where(s => s.Source.ToLowerInvariant().Contains(filter));
             }
 
             return shortcuts
@@ -193,52 +191,51 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
                 .Trim();
         }
 
-        private static bool MatchesQuery(ShortcutInfo shortcut, string query)
-        {
-            return (shortcut.Shortcut?.ToLowerInvariant().Contains(query) == true) ||
-                   (shortcut.Description?.ToLowerInvariant().Contains(query) == true) ||
-                   (shortcut.Keywords?.Any(k => k.ToLowerInvariant().Contains(query)) == true) ||
-                   (shortcut.Category?.ToLowerInvariant().Contains(query) == true) ||
-                   (shortcut.NormalizedShortcut?.Contains(query.Replace(" ", "")) == true);
-        }
+        private static bool MatchesQuery(ShortcutInfo shortcut, string query) =>
+            shortcut.Shortcut.ToLowerInvariant().Contains(query) ||
+            shortcut.Description.ToLowerInvariant().Contains(query) ||
+            shortcut.Keywords.Any(k => k.ToLowerInvariant().Contains(query)) ||
+            shortcut.Category.ToLowerInvariant().Contains(query) ||
+            shortcut.NormalizedShortcut.Contains(query.Replace(" ", string.Empty));
 
-        private static int CalculateRelevanceScore(ShortcutInfo shortcut, string query, string appFilter = null)
+        private static int CalculateRelevanceScore(ShortcutInfo shortcut, string query, string? appFilter = null)
         {
-            int score = 0;
+            var score = 0;
 
-            // App filter bonus
             if (!string.IsNullOrWhiteSpace(appFilter))
             {
                 var filter = appFilter.ToLowerInvariant();
-                if (shortcut.Source?.ToLowerInvariant() == filter)
-                    score += 200;
-                else if (shortcut.Source?.ToLowerInvariant().Contains(filter) == true)
-                    score += 100;
+                score += shortcut.Source.ToLowerInvariant() switch
+                {
+                    var s when s == filter => 200,
+                    var s when s.Contains(filter) => 100,
+                    _ => 0
+                };
             }
 
-            // Exact matches get highest priority
-            if (shortcut.Shortcut?.ToLowerInvariant() == query)
-                score += 1000;
-            else if (shortcut.Shortcut?.ToLowerInvariant().Contains(query) == true)
-                score += 800;
+            score += shortcut.Shortcut.ToLowerInvariant() switch
+            {
+                var s when s == query => 1000,
+                var s when s.Contains(query) => 800,
+                _ => 0
+            };
 
-            // Description matches
-            if (shortcut.Description?.ToLowerInvariant() == query)
-                score += 900;
-            else if (shortcut.Description?.ToLowerInvariant().StartsWith(query) == true)
-                score += 700;
-            else if (shortcut.Description?.ToLowerInvariant().Contains(query) == true)
-                score += 500;
+            score += shortcut.Description.ToLowerInvariant() switch
+            {
+                var d when d == query => 900,
+                var d when d.StartsWith(query) => 700,
+                var d when d.Contains(query) => 500,
+                _ => 0
+            };
 
-            // Keyword matches
-            if (shortcut.Keywords?.Any(k => k.ToLowerInvariant() == query) == true)
-                score += 600;
-            else if (shortcut.Keywords?.Any(k => k.ToLowerInvariant().Contains(query)) == true)
-                score += 300;
+            if (shortcut.Keywords.Any())
+            {
+                score += shortcut.Keywords.Any(k => k.ToLowerInvariant() == query) ? 600 :
+                         shortcut.Keywords.Any(k => k.ToLowerInvariant().Contains(query)) ? 300 : 0;
+            }
 
-            // Popular apps bonus
             var popularApps = new[] { "chrome", "firefox", "vscode", "word", "excel", "windows", "photoshop" };
-            if (popularApps.Contains(shortcut.Source?.ToLowerInvariant()))
+            if (popularApps.Contains(shortcut.Source.ToLowerInvariant()))
                 score += 50;
 
             return score;

@@ -1,14 +1,13 @@
-// ===== 5. QueryProcessor.cs =====
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Community.PowerToys.Run.Plugin.Hotkeys.Models;
 using ManagedCommon;
 using PowerToysRun.ShortcutFinder.Plugin.Helpers;
 using Wox.Plugin;
-using Community.PowerToys.Run.Plugin.Hotkeys.Models;
 
 namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
 {
@@ -18,11 +17,10 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
         private readonly ILogger _logger;
         private readonly PluginInitContext _context;
 
-        // Simple in-memory cache for search results
         private readonly System.Collections.Concurrent.ConcurrentDictionary<string, CacheEntry> _searchCache = new();
         private readonly TimeSpan _cacheDuration = TimeSpan.FromMinutes(5);
 
-        private record CacheEntry(List<Result> Results, DateTime Timestamp);
+        private readonly record struct CacheEntry(List<Result> Results, DateTime Timestamp);
 
         public QueryProcessor(IShortcutRepository repository, ILogger logger, PluginInitContext context)
         {
@@ -46,9 +44,9 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
             {
                 return parsedQuery.Command.ToLowerInvariant() switch
                 {
-                    "list" => await GetAppShortcutsAsync(parsedQuery.AppFilter ?? parsedQuery.SearchTerm, iconPath, cancellationToken),
+                    "list" => await GetAppShortcutsAsync(parsedQuery.AppFilter ?? parsedQuery.SearchTerm ?? string.Empty, iconPath, cancellationToken),
                     "apps" => await GetAvailableAppsAsync(iconPath, cancellationToken),
-                    "search" or _ => await SearchShortcutsAsync(parsedQuery.SearchTerm, parsedQuery.AppFilter, search, iconPath, cancellationToken)
+                    _ => await SearchShortcutsAsync(parsedQuery.SearchTerm, parsedQuery.AppFilter, search, iconPath, cancellationToken)
                 };
             }
             catch (Exception ex)
@@ -61,7 +59,7 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
         private ParsedQuery ParseQuery(string query)
         {
             if (string.IsNullOrWhiteSpace(query))
-                return new ParsedQuery("search", null, "");
+                return new ParsedQuery("search", null, string.Empty);
 
             query = query.Trim();
 
@@ -70,58 +68,37 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
 
             if (query.StartsWith("list:", StringComparison.OrdinalIgnoreCase))
             {
-                string app = query.Substring(5).Trim();
+                var app = query[5..].Trim();
                 return new ParsedQuery("list", app, app);
             }
 
-            var parts = query.Split(new[] { '/' }, 2, StringSplitOptions.RemoveEmptyEntries);
+            var parts = query.Split('/', 2, StringSplitOptions.RemoveEmptyEntries);
 
-            if (parts.Length == 2)
+            return parts.Length switch
             {
-                return new ParsedQuery("search", parts[1].Trim(), parts[0].Trim());
-            }
-            else if (query.StartsWith("/"))
-            {
-                string appFilter = query.Substring(1).Trim();
-                return new ParsedQuery("list", appFilter, appFilter);
-            }
-
-            return new ParsedQuery("search", null, query);
+                2 => new ParsedQuery("search", parts[1].Trim(), parts[0].Trim()),
+                1 when query.StartsWith('/') => new ParsedQuery("list", query[1..].Trim(), query[1..].Trim()),
+                _ => new ParsedQuery("search", null, query)
+            };
         }
 
-        private async Task<List<Result>> SearchShortcutsAsync(string searchTerm, string appFilter, string originalQuery, string iconPath, CancellationToken cancellationToken)
+        private async Task<List<Result>> SearchShortcutsAsync(string? searchTerm, string? appFilter, string originalQuery, string iconPath, CancellationToken cancellationToken)
         {
-               // Check cache first
-                string cacheKey = $"{searchTerm}|{appFilter}";
-                if (_searchCache.TryGetValue(cacheKey, out var cached) &&
-                    DateTime.UtcNow - cached.Timestamp < _cacheDuration)
-                {
-                    return cached.Results;
-                }
-            var shortcuts = await _repository.SearchShortcutsAsync(searchTerm, appFilter, cancellationToken);
-            var results = new List<Result>();
-
-            foreach (var shortcut in shortcuts)
+            var cacheKey = $"{searchTerm}|{appFilter}";
+            if (_searchCache.TryGetValue(cacheKey, out var cached) &&
+                DateTime.UtcNow - cached.Timestamp < _cacheDuration)
             {
-                var score = CalculateScore(shortcut, searchTerm, appFilter);
-
-                results.Add(new Result
-                {
-                    QueryTextDisplay = originalQuery,
-                    IcoPath = iconPath,
-                    Title = FormatTitle(shortcut),
-                    SubTitle = FormatSubTitle(shortcut, appFilter),
-                    ToolTipData = new ToolTipData(shortcut.Description, $"{shortcut.Shortcut}\n\nSource: {shortcut.Source}\nCategory: {shortcut.Category}"),
-                    Score = score,
-                    Action = _ => CopyShortcutAction(shortcut),
-                    ContextData = shortcut
-                });
+                return cached.Results;
             }
+
+            var shortcuts = await _repository.SearchShortcutsAsync(searchTerm ?? string.Empty, appFilter, cancellationToken);
+            var results = shortcuts.Select(shortcut => CreateShortcutResult(shortcut, searchTerm, appFilter, originalQuery, iconPath)).ToList();
 
             if (results.Count == 0)
             {
                 results.Add(CreateNoResultsFound(searchTerm, appFilter, originalQuery, iconPath));
             }
+
             var ordered = results.OrderByDescending(r => r.Score).ToList();
             _searchCache[cacheKey] = new CacheEntry(ordered, DateTime.UtcNow);
             CleanCache();
@@ -198,51 +175,45 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
             return results;
         }
 
-        private List<Result> GetHelpResults(string iconPath)
+        private List<Result> GetHelpResults(string iconPath) => new()
         {
-            return new List<Result>
+            new Result
             {
-                new Result
+                IcoPath = iconPath,
+                Title = "Search hotkeys by keyword",
+                SubTitle = "Example: 'copy', 'paste', 'ctrl+c'",
+                Action = _ => true
+            },
+            new Result
+            {
+                IcoPath = iconPath,
+                Title = "List all available apps",
+                SubTitle = "Type: apps",
+                Action = _ =>
                 {
-                    IcoPath = iconPath,
-                    Title = "Search hotkeys by keyword",
-                    SubTitle = "Example: 'copy', 'paste', 'ctrl+c'",
-                    Action = _ => true
-                },
-                new Result
-                {
-                    IcoPath = iconPath,
-                    Title = "List all available apps",
-                    SubTitle = "Type: apps",
-                    Action = _ =>
-                    {
-                        _context.API.ChangeQuery("hk apps", true);
-                        return false;
-                    }
-                },
-                new Result
-                {
-                    IcoPath = iconPath,
-                    Title = "List shortcuts for specific app",
-                    SubTitle = "Type: list:appname (e.g., 'list:chrome')",
-                    Action = _ => true
+                    _context.API.ChangeQuery("hk apps", true);
+                    return false;
                 }
-            };
-        }
+            },
+            new Result
+            {
+                IcoPath = iconPath,
+                Title = "List shortcuts for specific app",
+                SubTitle = "Type: list:appname (e.g., 'list:chrome')",
+                Action = _ => true
+            }
+        };
 
-        private List<Result> GetErrorResults(string query, string iconPath, string errorMessage)
+        private List<Result> GetErrorResults(string query, string iconPath, string errorMessage) => new()
         {
-            return new List<Result>
+            new Result
             {
-                new Result
-                {
-                    IcoPath = iconPath,
-                    Title = "Error processing query",
-                    SubTitle = $"Query: '{query}' - {errorMessage}",
-                    Action = _ => true
-                }
-            };
-        }
+                IcoPath = iconPath,
+                Title = "Error processing query",
+                SubTitle = $"Query: '{query}' - {errorMessage}",
+                Action = _ => true
+            }
+        };
 
         private bool CopyShortcutAction(ShortcutInfo shortcut)
         {
@@ -260,7 +231,24 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
             }
         }
 
-        private Result CreateNoResultsFound(string searchTerm, string appFilter, string originalQuery, string iconPath)
+        private Result CreateShortcutResult(ShortcutInfo shortcut, string? searchTerm, string? appFilter, string originalQuery, string iconPath)
+        {
+            var score = CalculateScore(shortcut, searchTerm ?? string.Empty, appFilter);
+
+            return new Result
+            {
+                QueryTextDisplay = originalQuery,
+                IcoPath = iconPath,
+                Title = FormatTitle(shortcut),
+                SubTitle = FormatSubTitle(shortcut, appFilter),
+                ToolTipData = new ToolTipData(shortcut.Description, $"{shortcut.Shortcut}\n\nSource: {shortcut.Source}\nCategory: {shortcut.Category}"),
+                Score = score,
+                Action = _ => CopyShortcutAction(shortcut),
+                ContextData = shortcut
+            };
+        }
+
+        private Result CreateNoResultsFound(string? searchTerm, string? appFilter, string originalQuery, string iconPath)
         {
             string message = !string.IsNullOrWhiteSpace(appFilter)
                 ? $"No hotkeys found for '{searchTerm}' in {appFilter}"
