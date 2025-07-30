@@ -20,7 +20,7 @@
   </a>
   <img src="https://img.shields.io/maintenance/yes/2025" alt="Maintenance">
   <img src="https://img.shields.io/badge/C%23-.NET-512BD4" alt="C# .NET">
-  <img src="https://img.shields.io/badge/version-v1.0.1-brightgreen" alt="Version">
+  <img src="https://img.shields.io/badge/version-v1.1.0-brightgreen" alt="Version">
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome">
   <a href="https://github.com/ruslanlap/PowerToysRun-Hotkeys/stargazers">
     <img src="https://img.shields.io/github/stars/ruslanlap/PowerToysRun-Hotkeys" alt="GitHub stars">
@@ -47,10 +47,10 @@
 </div>
 
 <div align="center">
-  <a href="https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.0.1/Hotkeys-1.0.1-x64.zip">
+  <a href="https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.1.0/Hotkeys-1.1.0-x64.zip">
     <img src="https://img.shields.io/badge/⬇️_DOWNLOAD-x64-blue?style=for-the-badge&logo=github" alt="Download x64">
   </a>
-  <a href="https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.0.1/Hotkeys-1.0.1-arm64.zip">
+  <a href="https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.1.0/Hotkeys-1.1.0-arm64.zip">
     <img src="https://img.shields.io/badge/⬇️_DOWNLOAD-ARM64-blue?style=for-the-badge&logo=github" alt="Download ARM64">
   </a>
 </div>
@@ -84,7 +84,7 @@ Hotkeys is a powerful plugin for [Microsoft PowerToys Run](https://github.com/mi
 - [📄 License](#-license)
 - [🙏 Acknowledgements](#-acknowledgements)
 - [☕ Support](#-support)
-- [🆕 What's New (v1.2.0)](#-whats-new-v120)
+- [🆕 What's New (v1.1.0)](#-whats-new-v110)
 
 ## ✨ Features
 
@@ -115,6 +115,20 @@ Hotkeys is a powerful plugin for [Microsoft PowerToys Run](https://github.com/mi
 
 ## 📝 Changelog
 
+### v1.1.0 (July 30, 2025)
+- Improved code readability and organization
+- Translated Ukrainian comments to English in ShortcutInfo.cs
+- Updated using statements to follow conventional ordering
+- Replaced ParsedQuery struct with modern record struct
+- Added nullable reference types for better type safety
+- Simplified method implementations with expression-bodied members
+- Refactored large methods into smaller, focused helper methods
+- Improved error handling and null checking
+- Added proper interface inheritance for IDisposable
+- Enhanced pattern matching and modern C# features
+- Consolidated redundant code patterns
+- Fixed PowerToys Run lint issues
+
 ### v1.0.1 (July 10, 2025)
 - Fixed package naming convention to comply with PowerToys Run standards
 - Added SHA256 checksums for all release packages
@@ -133,8 +147,8 @@ Hotkeys is a powerful plugin for [Microsoft PowerToys Run](https://github.com/mi
 ### Quick Install
 
 1. Download the appropriate ZIP for your system architecture:
-   - [x64 version](https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.0.1/Hotkeys-1.0.1-x64.zip)
-   - [ARM64 version](https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.0.1/Hotkeys-1.0.1-arm64.zip)
+   - [x64 version](https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.1.0/Hotkeys-1.1.0-x64.zip)
+   - [ARM64 version](https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.1.0/Hotkeys-1.1.0-arm64.zip)
 
 2. Extract the ZIP to:
    ```
@@ -283,8 +297,8 @@ dotnet publish -c Release -r win-x64 --self-contained false --output ./publish/x
 dotnet publish -c Release -r win-arm64 --self-contained false --output ./publish/arm64
 
 # Create distribution packages
-Compress-Archive -Path "./publish/x64/*" -DestinationPath "./Hotkeys-v1.2.0-x64.zip"
-Compress-Archive -Path "./publish/arm64/*" -DestinationPath "./Hotkeys-v1.2.0-arm64.zip"
+Compress-Archive -Path "./publish/x64/*" -DestinationPath "./Hotkeys-v1.1.0-x64.zip"
+Compress-Archive -Path "./publish/arm64/*" -DestinationPath "./Hotkeys-v1.1.0-arm64.zip"
 ```
 
 ### Development Deployment
