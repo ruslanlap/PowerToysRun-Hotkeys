@@ -1,3 +1,4 @@
+#nullable enable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -274,7 +275,7 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
             return $"{shortcut.Shortcut} - {shortcut.Description}";
         }
 
-        private static string FormatSubTitle(ShortcutInfo shortcut, string appFilter = null)
+        private static string FormatSubTitle(ShortcutInfo shortcut, string? appFilter = null)
         {
             string subtitle = $"{shortcut.Source} | {shortcut.Category ?? "General"}";
 
@@ -286,7 +287,7 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
             return subtitle;
         }
 
-        private static int CalculateScore(ShortcutInfo shortcut, string query, string appFilter = null)
+        private static int CalculateScore(ShortcutInfo shortcut, string query, string? appFilter = null)
         {
             if (string.IsNullOrWhiteSpace(query)) return 0;
 
