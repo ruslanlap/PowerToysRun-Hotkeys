@@ -1,4 +1,5 @@
 // ===== 6. PowerToysLogger.cs =====
+#nullable enable
 using System;
 using ManagedCommon;
 
@@ -16,7 +17,7 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
             Logger.LogWarning(message);
         }
 
-        public void LogError(string message, Exception exception = null)
+        public void LogError(string message, Exception? exception = null)
         {
             if (exception != null)
                 Logger.LogError(message, exception);

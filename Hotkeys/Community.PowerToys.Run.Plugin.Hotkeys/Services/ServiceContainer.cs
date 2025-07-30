@@ -1,4 +1,5 @@
 // ===== 9. ServiceContainer.cs (Optional Dependency Injection Container) =====
+#nullable enable
 using System;
 using System.Collections.Generic;
 
@@ -49,21 +50,23 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
             {
                 if (singleton is Type singletonType)
                 {
-                    var instance = (TInterface)Activator.CreateInstance(singletonType);
-                    _singletons[interfaceType] = instance;
-                    if (instance is IDisposable disposable)
+                    var instance = Activator.CreateInstance(singletonType) ?? throw new InvalidOperationException($"Failed to create instance of {singletonType.Name}");
+                    var typedInstance = (TInterface)instance;
+                    _singletons[interfaceType] = typedInstance;
+                    if (typedInstance is IDisposable disposable)
                         _disposables.Add(disposable);
-                    return instance;
+                    return typedInstance;
                 }
                 return (TInterface)singleton;
             }
 
             if (_transients.TryGetValue(interfaceType, out var transientType))
             {
-                var instance = (TInterface)Activator.CreateInstance(transientType);
-                if (instance is IDisposable disposable)
+                var instance = Activator.CreateInstance(transientType) ?? throw new InvalidOperationException($"Failed to create instance of {transientType.Name}");
+                var typedInstance = (TInterface)instance;
+                if (typedInstance is IDisposable disposable)
                     _disposables.Add(disposable);
-                return instance;
+                return typedInstance;
             }
 
             throw new InvalidOperationException($"Service of type {interfaceType.Name} is not registered.");

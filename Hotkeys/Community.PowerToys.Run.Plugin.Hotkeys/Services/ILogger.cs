@@ -7,7 +7,7 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
     {
         void LogInfo(string message);
         void LogWarning(string message);
-        void LogError(string message, Exception exception = null);
+        void LogError(string message, Exception? exception = null);
         void LogDebug(string message);
     }
 }
