@@ -31,6 +31,7 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
 
         public void RegisterSingleton<TInterface>(TInterface instance)
         {
+            if (instance == null) throw new ArgumentNullException(nameof(instance));
             _singletons[typeof(TInterface)] = instance;
             if (instance is IDisposable disposable)
                 _disposables.Add(disposable);

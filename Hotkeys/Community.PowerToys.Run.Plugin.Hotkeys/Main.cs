@@ -21,13 +21,19 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys
         public string Name => "Hotkeys";
         public string Description => "Find and copy keyboard shortcuts for any app";
 
-        private PluginInitContext Context { get; set; } = null!;
-        private string IconPath { get; set; } = string.Empty;
+        private PluginInitContext Context { get; set; }
+        private string IconPath { get; set; }
         private bool Disposed { get; set; }
 
         private IShortcutRepository? _shortcutRepository;
         private IQueryProcessor? _queryProcessor;
         private ILogger? _logger;
+
+        public Main()
+        {
+            Context = null!;
+            IconPath = string.Empty;
+        }
 
         public void Init(PluginInitContext context)
         {
