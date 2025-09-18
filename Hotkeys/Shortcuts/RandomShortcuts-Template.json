@@ -1,0 +1,34 @@
+[
+  {
+    "shortcut": "YOUR_SHORTCUT_KEY_COMBINATION",
+    "description": "YOUR_DESCRIPTION_OF_WHAT_THE_SHORTCUT_DOES",
+    "keywords": ["keyword1", "keyword2", "keyword3"],
+    "category": "YOUR_CATEGORY",
+    "source": "YOUR_APPLICATION_NAME",
+    "platform": "Windows",
+    "difficulty": "Beginner",
+    "notes": "OPTIONAL_ADDITIONAL_NOTES",
+    "aliases": ["ALTERNATIVE_SHORTCUT1", "ALTERNATIVE_SHORTCUT2"],
+    "version": "OPTIONAL_APP_VERSION",
+    "url": "OPTIONAL_DOCUMENTATION_URL"
+  },
+  {
+    "shortcut": "YOUR_SHORTCUT_KEY_COMBINATION_2",
+    "description": "YOUR_DESCRIPTION_OF_WHAT_THE_SHORTCUT_DOES_2",
+    "keywords": ["keyword1", "keyword2"],
+    "category": "YOUR_CATEGORY_2",
+    "source": "YOUR_APPLICATION_NAME",
+    "platform": "Windows",
+    "difficulty": "Intermediate"
+  },
+  {
+    "shortcut": "YOUR_SHORTCUT_KEY_COMBINATION_3",
+    "description": "YOUR_DESCRIPTION_OF_WHAT_THE_SHORTCUT_DOES_3",
+    "keywords": ["keyword1", "keyword2", "keyword3", "keyword4"],
+    "category": "YOUR_CATEGORY_3",
+    "source": "YOUR_APPLICATION_NAME",
+    "platform": "Windows",
+    "difficulty": "Advanced",
+    "notes": "OPTIONAL_ADDITIONAL_NOTES_3"
+  }
+]
