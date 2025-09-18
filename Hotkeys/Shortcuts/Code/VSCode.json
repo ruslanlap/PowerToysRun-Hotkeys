@@ -274,3 +274,5 @@
     "description": "Insert cursor below / above",
     "keywords": ["cursor", "multi"],
     "category": "Multi-cursor"
+  }
+]
