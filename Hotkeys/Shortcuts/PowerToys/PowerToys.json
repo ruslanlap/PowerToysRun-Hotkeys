@@ -6,7 +6,7 @@
     "category": "PowerToys Run"
   },
   {
-    "shortcut": "Win+Shift+`",
+    "shortcut": "Win+Ctrl+T",
     "description": "Toggle Always On Top for the active window",
     "keywords": ["always on top", "pin", "window"],
     "category": "Always On Top"
@@ -18,7 +18,7 @@
     "category": "File Locksmith"
   },
   {
-    "shortcut": "Win+Ctrl+D",
+    "shortcut": "Win+Shift+`",
     "description": "Open FancyZones editor",
     "keywords": ["fancyzones", "layout", "editor"],
     "category": "FancyZones"
@@ -36,9 +36,9 @@
     "category": "General"
   },
   {
-    "shortcut": "Ctrl+Shift+C",
-    "description": "Copy color code from Color Picker",
-    "keywords": ["color", "picker", "hex", "copy"],
+    "shortcut": "Win+Shift+C",
+    "description": "Copy a color code from Color Picker",
+    "keywords": ["color", "picker", "hex"],
     "category": "Color Picker"
   },
   {
@@ -78,15 +78,81 @@
     "category": "Clipboard"
   },
   {
-    "shortcut": "Win+Ctrl+T",
-    "description": "Open the Quick Accent picker",
-    "keywords": ["accent", "character", "typing"],
-    "category": "Quick Accent"
+    "shortcut": "Win+Shift+V",
+    "description": "Open Advanced Paste window",
+    "keywords": ["paste", "advanced", "clipboard"],
+    "category": "Advanced Paste"
+  },
+  {
+    "shortcut": "Win+Ctrl+Alt+V",
+    "description": "Paste as plain text directly",
+    "keywords": ["paste", "plain text", "clipboard"],
+    "category": "Advanced Paste"
+  },
+  {
+    "shortcut": "Win+Ctrl+Alt+M",
+    "description": "Paste as Markdown directly",
+    "keywords": ["paste", "markdown", "clipboard"],
+    "category": "Advanced Paste"
+  },
+  {
+    "shortcut": "Win+Ctrl+Alt+J",
+    "description": "Paste as JSON directly",
+    "keywords": ["paste", "json", "clipboard"],
+    "category": "Advanced Paste"
+  },
+  {
+    "shortcut": "Win+Ctrl+Shift+T",
+    "description": "Crop and create a thumbnail",
+    "keywords": ["crop", "thumbnail", "image"],
+    "category": "Crop And Lock"
   },
   {
     "shortcut": "Win+Ctrl+Shift+R",
-    "description": "Start or stop Video Conference Mute",
-    "keywords": ["mute", "video", "conference"],
-    "category": "Video Conference Mute"
+    "description": "Crop an app's window into a cropped window",
+    "keywords": ["crop", "reparent", "window"],
+    "category": "Crop And Lock"
+  },
+  {
+    "shortcut": "Hold Shift key",
+    "description": "Activate zones while dragging",
+    "keywords": ["fancyzones", "zones", "layout", "drag"],
+    "category": "FancyZones"
+  },
+  {
+    "shortcut": "Press Left Control twice",
+    "description": "Activation",
+    "keywords": ["keyboard manager", "remap", "shortcut"],
+    "category": "Keyboard Manager"
+  },
+  {
+    "shortcut": "Win+Alt+P",
+    "description": "Draw crosshairs centered on the mouse pointer",
+    "keywords": ["mouse", "crosshairs", "pointer"],
+    "category": "Mouse Utilities"
+  },
+  {
+    "shortcut": "Win+Shift+M",
+    "description": "Start measurement",
+    "keywords": ["screen ruler", "measure", "pixels"],
+    "category": "Screen Ruler"
+  },
+  {
+    "shortcut": "Win+Ctrl+`",
+    "description": "Open Workspaces editor",
+    "keywords": ["workspaces", "editor", "desktop", "layout"],
+    "category": "Workspaces"
+  },
+  {
+    "shortcut": "Ctrl+Space",
+    "description": "Preview file content",
+    "keywords": ["peek", "preview", "file"],
+    "category": "Peek"
+  },
+  {
+    "shortcut": "Win+Shift+/",
+    "description": "Display Windows shortcut guide",
+    "keywords": ["shortcut", "guide", "help", "shortcuts"],
+    "category": "Shortcut Guide"
   }
 ]
