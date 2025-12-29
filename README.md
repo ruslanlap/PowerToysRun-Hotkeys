@@ -80,8 +80,7 @@ Hotkeys is a powerful plugin for [Microsoft PowerToys Run](https://github.com/mi
 - [❓ FAQ](#-faq)
 - [🧑‍💻 Tech Stack](#-tech-stack)
 - [🌐 Localization](#-localization)
-- [📸 Screenshots](#-screenshots)
-- [📄 License](#-license)
+- [ License](#-license)
 - [🙏 Acknowledgements](#-acknowledgements)
 - [☕ Support](#-support)
 - [🆕 What's New (v1.1.0)](#-whats-new-v110)
@@ -442,29 +441,6 @@ To add shortcuts for a new application:
 <p>Yes! Your custom shortcuts are stored in JSON files in the Shortcuts directory. Simply backup that folder to preserve your customizations.</p>
 </details>
 
-## 🔆 Feature Spotlight
-
-This section highlights some of the most powerful features of the Hotkeys plugin:
-
-<div align="center">
-  <figure>
-    <img src="assets/feature-smart-filtering.png" width="800" alt="Smart Application Filtering">
-    <figcaption>
-      <strong>Smart Application Filtering</strong> - Use `/appname` syntax to instantly filter shortcuts by application. Type `/vscode` to see only Visual Studio Code shortcuts, or `list:chrome` for Chrome-specific hotkeys.
-    </figcaption>
-  </figure>
-  
-  <figure>
-    <img src="assets/feature-context-menu.png" width="800" alt="Rich Context Menu">
-    <figcaption><strong>Rich Context Menu</strong> - Right-click any result to access powerful actions: copy shortcuts, copy descriptions, open help documentation, or search for related shortcuts. Keyboard shortcuts work too!</figcaption>
-  </figure>
-
-  <figure>
-    <img src="assets/feature-fuzzy-search.png" width="800" alt="Fuzzy Search">
-    <figcaption><strong>Intelligent Fuzzy Search</strong> - Find shortcuts even with typos or partial matches. The plugin understands intent and helps you discover shortcuts faster, even when you can't remember the exact terms.</figcaption>
-  </figure>
-</div>
-
 ## 🧑‍💻 Tech Stack
 
 | Technology | Description | Usage |
@@ -489,35 +465,6 @@ Currently, the plugin UI is in English with built-in shortcuts for international
 - Web browsers (Chrome, Firefox, Edge)
 - Windows system shortcuts
 - Development tools (Git, terminal applications)
-
-## 📸 Screenshots
-
-<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;">
-  <figure style="margin:0;">
-    <img src="assets/screenshot-search.png" width="300" alt="Basic Search">
-    <figcaption style="text-align:center;">Basic Search</figcaption>
-  </figure>
-  <figure style="margin:0;">
-    <img src="assets/screenshot-app-filter.png" width="300" alt="App Filtering">
-    <figcaption style="text-align:center;">App Filtering</figcaption>
-  </figure>
-  <figure style="margin:0;">
-    <img src="assets/screenshot-context-menu.png" width="300" alt="Context Menu">
-    <figcaption style="text-align:center;">Context Menu</figcaption>
-  </figure>
-  <figure style="margin:0;">
-    <img src="assets/screenshot-fuzzy-search.png" width="300" alt="Fuzzy Search">
-    <figcaption style="text-align:center;">Fuzzy Search</figcaption>
-  </figure>
-  <figure style="margin:0;">
-    <img src="assets/screenshot-categories.png" width="300" alt="Categories">
-    <figcaption style="text-align:center;">Category Browsing</figcaption>
-  </figure>
-  <figure style="margin:0;">
-    <img src="assets/screenshot-settings.png" width="300" alt="Settings">
-    <figcaption style="text-align:center;">Plugin Settings</figcaption>
-  </figure>
-</div>
 
 ## 📄 License
 
