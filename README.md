@@ -402,6 +402,7 @@ To add shortcuts for a new application:
 ### Contributors
 
 - [ruslanlap](https://github.com/ruslanlap) - Project creator and maintainer
+- [codydunne](https://github.com/codydunne) - Feature improvements and bug reports
 - [Community Contributors](https://github.com/ruslanlap/PowerToysRun-Hotkeys/graphs/contributors) - Thank you!
 
 ## ❓ FAQ
