@@ -20,7 +20,7 @@
   </a>
   <img src="https://img.shields.io/maintenance/yes/2025" alt="Maintenance">
   <img src="https://img.shields.io/badge/C%23-.NET-512BD4" alt="C# .NET">
-  <img src="https://img.shields.io/badge/version-v1.1.0-brightgreen" alt="Version">
+  <img src="https://img.shields.io/badge/version-v1.1.1-brightgreen" alt="Version">
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome">
   <a href="https://github.com/ruslanlap/PowerToysRun-Hotkeys/stargazers">
     <img src="https://img.shields.io/github/stars/ruslanlap/PowerToysRun-Hotkeys" alt="GitHub stars">
@@ -47,10 +47,10 @@
 </div>
 
 <div align="center">
-  <a href="https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.1.0/Hotkeys-1.1.0-x64.zip">
+  <a href="https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.1.1/Hotkeys-1.1.1-x64.zip">
     <img src="https://img.shields.io/badge/⬇️_DOWNLOAD-x64-blue?style=for-the-badge&logo=github" alt="Download x64">
   </a>
-  <a href="https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.1.0/Hotkeys-1.1.0-arm64.zip">
+  <a href="https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.1.1/Hotkeys-1.1.1-arm64.zip">
     <img src="https://img.shields.io/badge/⬇️_DOWNLOAD-ARM64-blue?style=for-the-badge&logo=github" alt="Download ARM64">
   </a>
 </div>
@@ -114,6 +114,14 @@ Hotkeys is a powerful plugin for [Microsoft PowerToys Run](https://github.com/mi
 
 ## 📝 Changelog
 
+### v1.1.1 (December 29, 2024)
+- **Fixed**: Search now uses JSON `source` field instead of filename (issue #3)
+- **Fixed**: Shortcuts in custom files with specific source values are now searchable by source
+- **Fixed**: Query order is now flexible - both `hk f10 /custom` and `hk /custom f10` work (issue #3)
+- **Fixed**: Removed references to non-existent screenshot images from README (issue #2)
+- **Improved**: Shortcuts are now grouped by actual source field, not filename
+- **Contributors**: Thanks to [@codydunne](https://github.com/codydunne) for detailed bug reports and feature requests
+
 ### v1.1.0 (July 30, 2025)
 - Improved code readability and organization
 - Translated Ukrainian comments to English in ShortcutInfo.cs
@@ -146,8 +154,8 @@ Hotkeys is a powerful plugin for [Microsoft PowerToys Run](https://github.com/mi
 ### Quick Install
 
 1. Download the appropriate ZIP for your system architecture:
-   - [x64 version](https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.1.0/Hotkeys-1.1.0-x64.zip)
-   - [ARM64 version](https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.1.0/Hotkeys-1.1.0-arm64.zip)
+   - [x64 version](https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.1.1/Hotkeys-1.1.1-x64.zip)
+   - [ARM64 version](https://github.com/ruslanlap/PowerToysRun-Hotkeys/releases/download/v1.1.1/Hotkeys-1.1.1-arm64.zip)
 
 2. Extract the ZIP to:
    ```
