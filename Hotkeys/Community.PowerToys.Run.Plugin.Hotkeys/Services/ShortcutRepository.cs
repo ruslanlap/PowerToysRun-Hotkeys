@@ -126,18 +126,31 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
 
                 if (shortcuts?.Count > 0)
                 {
-                    var source = Path.GetFileNameWithoutExtension(filePath);
+                    var fileName = Path.GetFileNameWithoutExtension(filePath);
 
                     foreach (var shortcut in shortcuts)
                     {
-                        shortcut.Source = source;
+                        // Only set source from filename if not already defined in JSON
+                        if (string.IsNullOrWhiteSpace(shortcut.Source))
+                        {
+                            shortcut.Source = fileName;
+                        }
+                        
                         shortcut.NormalizedShortcut = NormalizeShortcut(shortcut.Shortcut);
 
-                        var key = $"{source}_{shortcut.Shortcut}_{shortcut.Description}";
+                        var key = $"{shortcut.Source}_{shortcut.Shortcut}_{shortcut.Description}";
                         _allShortcuts.TryAdd(key, shortcut);
+                        
+                        // Group by actual source, not filename
+                        _shortcutsBySource.AddOrUpdate(
+                            shortcut.Source,
+                            new List<ShortcutInfo> { shortcut },
+                            (key, existing) =>
+                            {
+                                existing.Add(shortcut);
+                                return existing;
+                            });
                     }
-
-                    _shortcutsBySource.AddOrUpdate(source, shortcuts, (key, existing) => shortcuts);
                 }
             }
             catch (Exception ex)

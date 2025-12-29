@@ -73,14 +73,35 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
                 return new ParsedQuery("list", app, app);
             }
 
-            var parts = query.Split('/', 2, StringSplitOptions.RemoveEmptyEntries);
-
-            return parts.Length switch
+            // Handle /appname at the beginning
+            if (query.StartsWith('/'))
             {
-                2 => new ParsedQuery("search", parts[1].Trim(), parts[0].Trim()),
-                1 when query.StartsWith('/') => new ParsedQuery("list", query[1..].Trim(), query[1..].Trim()),
-                _ => new ParsedQuery("search", null, query)
-            };
+                var parts = query[1..].Split(new[] { ' ' }, 2, StringSplitOptions.RemoveEmptyEntries);
+                if (parts.Length == 1)
+                {
+                    // Just "/appname" - list command
+                    return new ParsedQuery("list", parts[0].Trim(), parts[0].Trim());
+                }
+                else
+                {
+                    // "/appname searchterm" - search with filter
+                    return new ParsedQuery("search", parts[0].Trim(), parts[1].Trim());
+                }
+            }
+
+            // Handle /appname anywhere in the query
+            var slashIndex = query.IndexOf('/');
+            if (slashIndex > 0)
+            {
+                var beforeSlash = query[..slashIndex].Trim();
+                var afterSlash = query[(slashIndex + 1)..].Trim();
+                
+                // "searchterm /appname" format
+                return new ParsedQuery("search", afterSlash, beforeSlash);
+            }
+
+            // No slash found - regular search
+            return new ParsedQuery("search", null, query);
         }
 
         private async Task<List<Result>> SearchShortcutsAsync(string? searchTerm, string? appFilter, string originalQuery, string iconPath, CancellationToken cancellationToken)
