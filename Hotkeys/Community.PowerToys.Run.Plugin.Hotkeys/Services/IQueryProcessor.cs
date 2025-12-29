@@ -11,8 +11,19 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
         Task<List<Result>> ProcessQueryAsync(Query query, string iconPath, CancellationToken cancellationToken = default);
     }
 
+    public enum FilterType
+    {
+        None,
+        App,
+        Category,
+        Keyword,
+        Source
+    }
+
     public readonly record struct ParsedQuery(
         string Command,
         string? AppFilter,
-        string? SearchTerm);
+        string? SearchTerm,
+        FilterType FilterType = FilterType.None,
+        string? FilterValue = null);
 }

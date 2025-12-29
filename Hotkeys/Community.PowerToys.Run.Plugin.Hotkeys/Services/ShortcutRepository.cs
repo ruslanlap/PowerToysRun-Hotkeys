@@ -51,20 +51,44 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
             return _shortcutsBySource.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.ToList());
         }
 
-        public async Task<List<ShortcutInfo>> SearchShortcutsAsync(string query, string? appFilter = null, CancellationToken cancellationToken = default)
+        public async Task<List<ShortcutInfo>> SearchShortcutsAsync(string query, string? appFilter = null, FilterType filterType = FilterType.None, string? filterValue = null, CancellationToken cancellationToken = default)
         {
-            if (string.IsNullOrWhiteSpace(query))
+            if (string.IsNullOrWhiteSpace(query) && filterType == FilterType.None)
                 return new List<ShortcutInfo>();
 
             await EnsureInitializedAsync(cancellationToken);
 
-            var searchQuery = query.ToLowerInvariant().Trim();
+            var searchQuery = query?.ToLowerInvariant().Trim() ?? string.Empty;
             var shortcuts = _allShortcuts.Values.AsEnumerable();
 
+            // Apply legacy appFilter for backward compatibility
             if (!string.IsNullOrWhiteSpace(appFilter))
             {
                 var filter = appFilter.ToLowerInvariant();
                 shortcuts = shortcuts.Where(s => s.Source.ToLowerInvariant().Contains(filter));
+            }
+
+            // Apply new filter types
+            if (filterType != FilterType.None && !string.IsNullOrWhiteSpace(filterValue))
+            {
+                var filter = filterValue.ToLowerInvariant();
+                shortcuts = filterType switch
+                {
+                    FilterType.App => shortcuts.Where(s => s.Source.ToLowerInvariant().Contains(filter)),
+                    FilterType.Source => shortcuts.Where(s => s.Source.ToLowerInvariant().Contains(filter)),
+                    FilterType.Category => shortcuts.Where(s => s.Category.ToLowerInvariant().Contains(filter)),
+                    FilterType.Keyword => shortcuts.Where(s => s.Keywords.Any(k => k.ToLowerInvariant().Contains(filter))),
+                    _ => shortcuts
+                };
+            }
+
+            // If only filtering without search query, return all filtered results
+            if (string.IsNullOrWhiteSpace(searchQuery))
+            {
+                return shortcuts
+                    .OrderByDescending(s => CalculateRelevanceScore(s, searchQuery, appFilter))
+                    .Take(50)
+                    .ToList();
             }
 
             return shortcuts

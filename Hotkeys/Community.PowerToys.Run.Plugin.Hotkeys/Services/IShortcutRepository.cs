@@ -10,7 +10,7 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
     public interface IShortcutRepository : IDisposable
     {
         Task<List<ShortcutInfo>> GetAllShortcutsAsync(CancellationToken cancellationToken = default);
-        Task<List<ShortcutInfo>> SearchShortcutsAsync(string query, string? appFilter = null, CancellationToken cancellationToken = default);
+        Task<List<ShortcutInfo>> SearchShortcutsAsync(string query, string? appFilter = null, FilterType filterType = FilterType.None, string? filterValue = null, CancellationToken cancellationToken = default);
         Task<Dictionary<string, List<ShortcutInfo>>> GetShortcutsBySourceAsync(CancellationToken cancellationToken = default);
         Task ReloadShortcutsAsync(CancellationToken cancellationToken = default);
         IObservable<ShortcutCollectionChangedEventArgs> ShortcutsChanged { get; }

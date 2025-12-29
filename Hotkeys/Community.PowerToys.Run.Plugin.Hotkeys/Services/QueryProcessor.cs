@@ -47,7 +47,7 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
                 {
                     "list" => await GetAppShortcutsAsync(parsedQuery.AppFilter ?? parsedQuery.SearchTerm ?? string.Empty, iconPath, cancellationToken),
                     "apps" => await GetAvailableAppsAsync(iconPath, cancellationToken),
-                    _ => await SearchShortcutsAsync(parsedQuery.SearchTerm, parsedQuery.AppFilter, search, iconPath, cancellationToken)
+                    _ => await SearchShortcutsAsync(parsedQuery.SearchTerm, parsedQuery.AppFilter, search, iconPath, parsedQuery.FilterType, parsedQuery.FilterValue, cancellationToken)
                 };
             }
             catch (Exception ex)
@@ -73,6 +73,35 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
                 return new ParsedQuery("list", app, app);
             }
 
+            // Handle special filter prefixes: app:, category:, keyword:, source:
+            var filterPrefixes = new[] { "app:", "category:", "keyword:", "source:" };
+            foreach (var prefix in filterPrefixes)
+            {
+                if (query.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+                {
+                    var filterType = prefix[..^1] switch
+                    {
+                        var s when s.Equals("app", StringComparison.OrdinalIgnoreCase) => FilterType.App,
+                        var s when s.Equals("category", StringComparison.OrdinalIgnoreCase) => FilterType.Category,
+                        var s when s.Equals("keyword", StringComparison.OrdinalIgnoreCase) => FilterType.Keyword,
+                        var s when s.Equals("source", StringComparison.OrdinalIgnoreCase) => FilterType.Source,
+                        _ => FilterType.None
+                    };
+
+                    var parts = query[prefix.Length..].Split(new[] { ' ' }, 2, StringSplitOptions.RemoveEmptyEntries);
+                    var filterValue = parts.Length > 0 ? parts[0].Trim() : string.Empty;
+                    var searchTerm = parts.Length > 1 ? parts[1].Trim() : string.Empty;
+
+                    // If only filter value, treat as list command for that filter
+                    if (string.IsNullOrWhiteSpace(searchTerm) && filterType == FilterType.App)
+                    {
+                        return new ParsedQuery("list", filterValue, filterValue, filterType, filterValue);
+                    }
+
+                    return new ParsedQuery("search", null, searchTerm, filterType, filterValue);
+                }
+            }
+
             // Handle /appname at the beginning
             if (query.StartsWith('/'))
             {
@@ -80,12 +109,12 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
                 if (parts.Length == 1)
                 {
                     // Just "/appname" - list command
-                    return new ParsedQuery("list", parts[0].Trim(), parts[0].Trim());
+                    return new ParsedQuery("list", parts[0].Trim(), parts[0].Trim(), FilterType.App, parts[0].Trim());
                 }
                 else
                 {
                     // "/appname searchterm" - search with filter
-                    return new ParsedQuery("search", parts[0].Trim(), parts[1].Trim());
+                    return new ParsedQuery("search", parts[0].Trim(), parts[1].Trim(), FilterType.App, parts[0].Trim());
                 }
             }
 
@@ -95,25 +124,25 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Services
             {
                 var beforeSlash = query[..slashIndex].Trim();
                 var afterSlash = query[(slashIndex + 1)..].Trim();
-                
+
                 // "searchterm /appname" format
-                return new ParsedQuery("search", afterSlash, beforeSlash);
+                return new ParsedQuery("search", afterSlash, beforeSlash, FilterType.App, afterSlash);
             }
 
             // No slash found - regular search
             return new ParsedQuery("search", null, query);
         }
 
-        private async Task<List<Result>> SearchShortcutsAsync(string? searchTerm, string? appFilter, string originalQuery, string iconPath, CancellationToken cancellationToken)
+        private async Task<List<Result>> SearchShortcutsAsync(string? searchTerm, string? appFilter, string originalQuery, string iconPath, FilterType filterType, string? filterValue, CancellationToken cancellationToken)
         {
-            var cacheKey = $"{searchTerm}|{appFilter}";
+            var cacheKey = $"{searchTerm}|{appFilter}|{filterType}|{filterValue}";
             if (_searchCache.TryGetValue(cacheKey, out var cached) &&
                 DateTime.UtcNow - cached.Timestamp < _cacheDuration)
             {
                 return cached.Results;
             }
 
-            var shortcuts = await _repository.SearchShortcutsAsync(searchTerm ?? string.Empty, appFilter, cancellationToken);
+            var shortcuts = await _repository.SearchShortcutsAsync(searchTerm ?? string.Empty, appFilter, filterType, filterValue, cancellationToken);
             var results = shortcuts.Select(shortcut => CreateShortcutResult(shortcut, searchTerm, appFilter, originalQuery, iconPath)).ToList();
 
             if (results.Count == 0)

@@ -11,6 +11,7 @@ namespace Community.PowerToys.Run.Plugin.Hotkeys.Models
         public string Category { get; set; } = string.Empty;
         public string Source { get; set; } = string.Empty;
         public string Language { get; set; } = string.Empty;
+        public string Url { get; set; } = string.Empty;
 
         /// <summary>
         /// Normalized shortcut for better search matching (not stored in JSON)
