@@ -238,5 +238,22 @@
     "description": "Rename selected file or folder",
     "keywords": ["rename", "file", "folder"],
     "category": "File Explorer"
+  },
+  {
+    "shortcut": "Shift+F10, t, Enter",
+    "description": "Open the selected directory in Windows Terminal.",
+    "category": "Windows",
+    "keywords": ["Windows Terminal", "wt", "Explorer", "windows 11"],
+    "source": "Windows",
+    "platform": "Windows"
+  },
+  {
+    "shortcut": "Shift+F10",
+    "description": "Open the new context menu.",
+    "category": "System",
+    "keywords": ["context menu", "menu", "explorer", "windows 11"],
+    "source": "Windows",
+    "url": "https://superuser.com/questions/1701751/how-to-open-the-new-context-menu-on-windows-11-using-the-keyboard-only/1850945#1850945",
+    "platform": "Windows"
   }
 ]
