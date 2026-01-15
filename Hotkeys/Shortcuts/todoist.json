@@ -1,0 +1,1161 @@
+[
+  {
+    "shortcut": "Q",
+    "description": "Quick Add task",
+    "category": "General",
+    "source": "Todoist",
+    "keywords": [
+      "quick",
+      "add",
+      "task",
+      "create",
+      "new"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+Space",
+    "description": "Open Quick Add (desktop app)",
+    "category": "Global",
+    "source": "Todoist",
+    "keywords": ["quick", "add", "desktop", "global"],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Alt+Shift+R",
+    "description": "Quick Ramble (global)",
+    "category": "Global",
+    "source": "Todoist",
+    "keywords": ["ramble", "voice", "dictate", "desktop", "global"],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Win+Alt+S",
+    "description": "Show or hide Todoist (desktop app)",
+    "category": "Global",
+    "source": "Todoist",
+    "keywords": ["show", "hide", "toggle", "desktop", "global"],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "A",
+    "description": "Add new task to the bottom of list",
+    "category": "Task Creation",
+    "source": "Todoist",
+    "keywords": [
+      "add",
+      "task",
+      "bottom",
+      "list"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+A",
+    "description": "Add new task to the top of list",
+    "category": "Task Creation",
+    "source": "Todoist",
+    "keywords": [
+      "add",
+      "task",
+      "top",
+      "list"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "/ or F",
+    "description": "Search",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "search",
+      "find",
+      "query"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "H or G then H",
+    "description": "Go to home",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "home",
+      "today",
+      "navigate"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "K or Up",
+    "description": "Move focus up",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "up",
+      "previous",
+      "task",
+      "navigate"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "J or Down",
+    "description": "Move focus down",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "down",
+      "next",
+      "task",
+      "navigate"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+]",
+    "description": "Increase indent of focused task",
+    "category": "Sub-tasks",
+    "source": "Todoist",
+    "keywords": [
+      "indent",
+      "nest",
+      "subtask",
+      "hierarchy"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+[",
+    "description": "Decrease indent of focused task",
+    "category": "Sub-tasks",
+    "source": "Todoist",
+    "keywords": [
+      "outdent",
+      "unnest",
+      "parent",
+      "hierarchy"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+E or Alt+Click",
+    "description": "Edit task",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "edit",
+      "modify",
+      "update",
+      "task"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+Enter",
+    "description": "Save edits",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "save",
+      "confirm",
+      "edit",
+      "task"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Enter",
+    "description": "Save a newly created task and create a new one below",
+    "category": "Task Creation",
+    "source": "Todoist",
+    "keywords": [
+      "save",
+      "submit",
+      "confirm",
+      "task"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Enter",
+    "description": "Open task view",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "open",
+      "view",
+      "task",
+      "details"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Esc",
+    "description": "Dismiss/Cancel",
+    "category": "General",
+    "source": "Todoist",
+    "keywords": [
+      "cancel",
+      "close",
+      "dismiss",
+      "abort"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+Up",
+    "description": "Move to the task above the task currently being edited",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "move",
+      "reorder",
+      "sort",
+      "up"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+Down",
+    "description": "Move to the task below the task currently being edited",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "move",
+      "reorder",
+      "sort",
+      "down"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "C",
+    "description": "Comment",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "comment",
+      "note",
+      "message",
+      "add"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "E",
+    "description": "Complete focused task",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "complete",
+      "finish",
+      "done",
+      "check"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "X",
+    "description": "Select focused task",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "select",
+      "focus",
+      "task",
+      "choose"
+    ],
+    "platform": "Cross-platform",
+    "aliases": ["Ctrl+Click"],
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+Click",
+    "description": "Select focused task",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "select",
+      "focus",
+      "task",
+      "click"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+Click checkbox",
+    "description": "Complete and archive recurring task",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "complete",
+      "finish",
+      "done",
+      "subtasks",
+      "children"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "T",
+    "description": "Set date",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "due",
+      "date",
+      "schedule",
+      "time",
+      "deadline"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Y",
+    "description": "Change priority level",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "priority",
+      "change",
+      "modify"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "P",
+    "description": "Sort by priority",
+    "category": "Sort",
+    "source": "Todoist",
+    "keywords": [
+      "priority",
+      "importance",
+      "urgent",
+      "flag"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "L",
+    "description": "Add label",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "label",
+      "tag",
+      "category",
+      "organize"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "R",
+    "description": "Sort by assignee",
+    "category": "Sort",
+    "source": "Todoist",
+    "keywords": [
+      "assign",
+      "delegate",
+      "responsibility",
+      "person",
+      "team"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "V",
+    "description": "Move to...",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "move",
+      "transfer",
+      "project",
+      "relocate"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "#",
+    "description": "Pick a project (Quick Add)",
+    "category": "Quick Add",
+    "source": "Todoist",
+    "keywords": [
+      "project",
+      "pick",
+      "select"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "?",
+    "description": "Show keyboard shortcuts",
+    "category": "General",
+    "source": "Todoist",
+    "keywords": [
+      "help",
+      "shortcuts",
+      "guide",
+      "reference"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+K",
+    "description": "Open Quick Find",
+    "category": "General",
+    "source": "Todoist",
+    "keywords": [
+      "quick",
+      "find",
+      "search",
+      "command"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "S",
+    "description": "Add section",
+    "category": "Project",
+    "source": "Todoist",
+    "keywords": [
+      "section",
+      "group",
+      "create",
+      "new"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+Enter",
+    "description": "Save changes to an existing task and create a new task below",
+    "category": "Task Creation",
+    "source": "Todoist",
+    "keywords": [
+      "add",
+      "task",
+      "continue",
+      "create"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "M",
+    "description": "Open/close sidebar",
+    "category": "General",
+    "source": "Todoist",
+    "keywords": [
+      "sidebar",
+      "menu",
+      "toggle"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+G",
+    "description": "Open task in its project",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "go",
+      "navigate",
+      "project"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "G then I",
+    "description": "Go to Inbox",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "inbox",
+      "navigate"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "G then T",
+    "description": "Go to Today",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "today",
+      "navigate"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "G then U",
+    "description": "Go to Upcoming",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "upcoming",
+      "navigate"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "G then L",
+    "description": "Go to labels",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "labels",
+      "tags"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "G then P",
+    "description": "Go to projects",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "projects",
+      "navigate"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "G then /",
+    "description": "Go to section",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "section",
+      "navigate"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "G then A",
+    "description": "Open activity log",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "activity",
+      "log",
+      "history"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "G then V",
+    "description": "Open Filters & Labels",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "filters",
+      "labels"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "O then P",
+    "description": "Open Productivity",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "productivity",
+      "stats"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "O then H",
+    "description": "Open help",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "help",
+      "support"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "O then N",
+    "description": "Open notifications",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "notifications",
+      "alerts"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "O then U",
+    "description": "Open profile photo menu",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "profile",
+      "menu",
+      "user"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "O then S",
+    "description": "Open settings",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "settings",
+      "preferences"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "O then T",
+    "description": "Open theme",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "theme",
+      "appearance"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Right",
+    "description": "Move focus to the right",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "right",
+      "navigate"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Left",
+    "description": "Move focus to the left",
+    "category": "Navigation",
+    "source": "Todoist",
+    "keywords": [
+      "left",
+      "navigate"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+T",
+    "description": "Remove date",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "date",
+      "remove",
+      "clear"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "1, 2, 3, 4",
+    "description": "Set priority level",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "priority",
+      "level",
+      "importance"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+R",
+    "description": "Assign/reassign",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "assign",
+      "reassign",
+      "delegate"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": ".",
+    "description": "More task actions",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "more",
+      "actions",
+      "menu"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+Click or Shift+Click",
+    "description": "Select multiple tasks",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "select",
+      "multiple",
+      "batch"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": ",",
+    "description": "Move focus to multi-select toolbar",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "multi-select",
+      "toolbar",
+      "focus"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+Delete",
+    "description": "Delete selected task",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "delete",
+      "remove",
+      "trash"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+Ctrl+C",
+    "description": "Copy link to task",
+    "category": "Task Management",
+    "source": "Todoist",
+    "keywords": [
+      "copy",
+      "link",
+      "share"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "D",
+    "description": "Sort by date",
+    "category": "Sort",
+    "source": "Todoist",
+    "keywords": [
+      "sort",
+      "date",
+      "order"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "N",
+    "description": "Sort by name",
+    "category": "Sort",
+    "source": "Todoist",
+    "keywords": [
+      "sort",
+      "name",
+      "alphabetical"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+E",
+    "description": "See or hide sub-tasks",
+    "category": "Sub-tasks",
+    "source": "Todoist",
+    "keywords": [
+      "subtasks",
+      "show",
+      "hide",
+      "toggle"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+V",
+    "description": "Change to list/board/calendar layout",
+    "category": "Project",
+    "source": "Todoist",
+    "keywords": [
+      "layout",
+      "view",
+      "list",
+      "board"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+S",
+    "description": "Share project",
+    "category": "Project",
+    "source": "Todoist",
+    "keywords": [
+      "share",
+      "project",
+      "collaborate"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "W",
+    "description": "Open more project actions",
+    "category": "Project",
+    "source": "Todoist",
+    "keywords": [
+      "project",
+      "actions",
+      "more"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Home",
+    "description": "Go to today in Upcoming",
+    "category": "Upcoming View",
+    "source": "Todoist",
+    "keywords": [
+      "today",
+      "upcoming",
+      "navigate"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+Right",
+    "description": "Next week in Upcoming",
+    "category": "Upcoming View",
+    "source": "Todoist",
+    "keywords": [
+      "next",
+      "week",
+      "forward"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+Left",
+    "description": "Previous week in Upcoming",
+    "category": "Upcoming View",
+    "source": "Todoist",
+    "keywords": [
+      "previous",
+      "week",
+      "back"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "T",
+    "description": "Go back to today (Calendar layout)",
+    "category": "Calendar Layout",
+    "source": "Todoist",
+    "keywords": [
+      "today",
+      "calendar",
+      "navigate"
+    ],
+    "platform": "Cross-platform",
+    "aliases": ["Shift+Ctrl+Y"],
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+Right",
+    "description": "Go to next week (Calendar layout)",
+    "category": "Calendar Layout",
+    "source": "Todoist",
+    "keywords": [
+      "next",
+      "week",
+      "calendar"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+Left",
+    "description": "Go to previous week (Calendar layout)",
+    "category": "Calendar Layout",
+    "source": "Todoist",
+    "keywords": [
+      "previous",
+      "week",
+      "calendar"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "/",
+    "description": "Pick a section (Quick Add)",
+    "category": "Quick Add",
+    "source": "Todoist",
+    "keywords": [
+      "section",
+      "pick",
+      "select"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "+",
+    "description": "Add an assignee (Quick Add)",
+    "category": "Quick Add",
+    "source": "Todoist",
+    "keywords": [
+      "assignee",
+      "add",
+      "person"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "@",
+    "description": "Add a label (Quick Add)",
+    "category": "Quick Add",
+    "source": "Todoist",
+    "keywords": [
+      "label",
+      "tag",
+      "add"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "!",
+    "description": "Add a reminder (Quick Add)",
+    "category": "Quick Add",
+    "source": "Todoist",
+    "keywords": [
+      "reminder",
+      "add",
+      "alert"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "p1, p2, p3, p4",
+    "description": "Set a priority level (Quick Add)",
+    "category": "Quick Add",
+    "source": "Todoist",
+    "keywords": [
+      "priority",
+      "level",
+      "p1",
+      "p2",
+      "p3",
+      "p4"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "{date}",
+    "description": "Add a deadline (Quick Add)",
+    "category": "Quick Add",
+    "source": "Todoist",
+    "keywords": [
+      "deadline",
+      "date",
+      "schedule",
+      "due"
+    ],
+    "platform": "Cross-platform",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+Enter",
+    "description": "Save a new task or save changes and create a new task above",
+    "category": "Task Creation",
+    "source": "Todoist",
+    "keywords": [
+      "save",
+      "task",
+      "above"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+P",
+    "description": "Print current view",
+    "category": "General",
+    "source": "Todoist",
+    "keywords": [
+      "print",
+      "view"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+=",
+    "description": "Zoom in",
+    "category": "General",
+    "source": "Todoist",
+    "keywords": [
+      "zoom",
+      "in",
+      "larger"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+-",
+    "description": "Zoom out",
+    "category": "General",
+    "source": "Todoist",
+    "keywords": [
+      "zoom",
+      "out",
+      "smaller"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+0",
+    "description": "Reset zoom level",
+    "category": "General",
+    "source": "Todoist",
+    "keywords": [
+      "zoom",
+      "reset",
+      "default"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  }
+  ,
+  {
+    "shortcut": "Shift+Ctrl+N",
+    "description": "Open current view in new window",
+    "category": "Multi-window",
+    "source": "Todoist",
+    "keywords": [
+      "new",
+      "window",
+      "current",
+      "view"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Shift+Alt+Ctrl+N",
+    "description": "Open new Home view window",
+    "category": "Multi-window",
+    "source": "Todoist",
+    "keywords": [
+      "home",
+      "window",
+      "new"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "Ctrl+F11",
+    "description": "Float window on top",
+    "category": "Multi-window",
+    "source": "Todoist",
+    "keywords": [
+      "float",
+      "window",
+      "always on top"
+    ],
+    "platform": "Windows",
+    "url": "https://www.todoist.com/help/articles/use-keyboard-shortcuts-in-todoist-Wyovn2"
+  },
+  {
+    "shortcut": "CTRL+Q",
+    "description": "Add new task to the bottom of list (Edge, Firefox extensions)",
+    "category": "Task Creation",
+    "source": "Todoist",
+    "keywords": [
+      "add",
+      "task",
+      "bottom",
+      "list"
+    ],
+    "platform": "Edge, Firefox extensions"
+  }
+]
